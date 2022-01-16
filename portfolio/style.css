@@ -269,7 +269,7 @@ h1 {
   justify-content: space-between;
   width: 1400px;
   height: 505px;
-  margin: auto;
+  margin: 0 auto 100px;
 }
 
 .price-item {
@@ -310,4 +310,59 @@ h1 {
 .price-btn {
   display: block;
   margin: 40px auto;
+}
+
+.contacts {
+  background: url(./assets/img/bottom.jpg) no-repeat;
+  width: 1440px;
+  height: 700px;
+  padding-top: 60px;
+}
+
+.contact__container {
+  width: 450px;
+  height: 445px;
+  margin: 0 20px 195px 970px;
+}
+
+.contact-title {
+ font-family: Merriweather;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 80px;
+  color: #BDAE82; 
+  margin: 0 0 40px 0 ;
+}
+
+.contact-email,
+.contact-phone {
+  display: block;
+  padding-left: 0;
+  margin: 0 0 20px 0;
+  width: 450px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid #bdae82;
+}
+
+.contact-email::placeholder,
+.contact-phone::placeholder,
+.contact-message::placeholder {
+  padding-left: 20px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px;
+  color: #bdae82;
+}
+
+.contact-message {
+  padding: 0 0 40px 0;
+  margin: 0 0 30px 0;
+  width: 450px;
+  height: 100px;
+  resize: none;
+  background-color: transparent;
+  border: 2px solid #bdae82;
 }
