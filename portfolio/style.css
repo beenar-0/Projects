@@ -169,6 +169,10 @@ h1 {
   margin-left: 20px;
 }
 
+.skills {
+  margin-bottom: 110px;
+}
+
 .skills-item__container {
   display: flex;
   color: #FFF;
