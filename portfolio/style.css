@@ -388,7 +388,7 @@ h1 {
 .copyright {
   width: 20px;
   height: 20px;
-  background: url(./assets/svg/footer-c.svg) no-repeat;
+  background: url(./assets/svg/footer-c.svg) no-repeat center center;
 }
 
 .year {
