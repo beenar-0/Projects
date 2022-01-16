@@ -366,3 +366,60 @@ h1 {
   background-color: transparent;
   border: 2px solid #bdae82;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  padding: 50px 20px;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 50px;
+  color: #FFFFFF;
+}
+
+.footer-container__left {
+  display: flex;
+  align-items: center;
+  width: 188px;
+  height: 50px;
+}
+
+.copyright {
+  width: 20px;
+  height: 20px;
+  background: url(./assets/svg/footer-c.svg) no-repeat;
+}
+
+.year {
+  margin: 0 20px;
+}
+
+.footer-container__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 188px;
+  height: 50px;
+}
+
+.social-link {
+  width: 32px;
+  height: 32px;
+}
+
+.inst {
+  background: url(./assets/svg/footer-insta.svg) no-repeat; 
+}
+
+.fb {
+  background: url(./assets/svg/footer-facebook.svg) no-repeat;
+}
+
+.twit {
+  background: url(./assets/svg/footer-twitter.svg) no-repeat;
+}
+
+.print {
+  background: url(./assets/svg/footer-printest.svg) no-repeat;
+}
