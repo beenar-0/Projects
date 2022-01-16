@@ -36,7 +36,7 @@ body {
   flex-direction: row;
   padding: 20px;
   height: 90px;
-  background: url('./assets/img/head.png');
+  background: url('./assets/img/head.jpg') no-repeat;
   background-repeat: no-repeat;
   background-position: center 0;
 }
@@ -247,4 +247,19 @@ h1 {
   height: 560px;
 }
 
+.videoplayer__container {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin: auto;
+  width: 1400px;
+  height: 705px;
+  background: url(./assets/img/video-player.jpg) no-repeat;
+}
 
+.play-button {
+  display: block; 
+  background: url(./assets/svg/play-button.svg) no-repeat;
+  width: 130px;
+  height: 130px;
+}
