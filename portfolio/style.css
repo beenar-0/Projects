@@ -889,8 +889,15 @@ a {
     background-color: black;
     transition: all 0.3s ease 0s;
     transform: translate(100%, 0px);
-    padding: 134px 343px 461px 127px;
+    padding: 134px 343px 461px 107px;
     overflow: hidden;
+  }
+
+  @media (max-width: 620px) {
+    .menu__body {
+      width: 100%;
+      left: 0%;
+    }
   }
 
   .menu-icon._active {
