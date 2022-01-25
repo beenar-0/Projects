@@ -842,7 +842,7 @@ a {
   }
 
   .menu-icon {
-
+    overflow: hidden;
     display: block;
     position: relative;
     width: 50px;
@@ -933,4 +933,8 @@ a {
     overflow: hidden;
   }
 
+  body {
+    overflow-x: hidden;
+  }
+    
 }
