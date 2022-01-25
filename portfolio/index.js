@@ -52,3 +52,4 @@ link5.addEventListener("click", function (f) {
 }
 })
 
+console.log("75")
