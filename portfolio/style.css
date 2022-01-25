@@ -902,6 +902,7 @@ a {
 
   .menu-icon._active {
     position: fixed;
+    transform: translate(35%);
   }
 
   .menu-icon._active span{
