@@ -1,55 +1,24 @@
 const burgerIcon = document.querySelector(".menu-icon")
 const menuBody = document.querySelector(".menu__body")
-const link1 = document.querySelector(".link1")
-const link2 = document.querySelector(".link2")
-const link3 = document.querySelector(".link3")
-const link4 = document.querySelector(".link4")
-const link5 = document.querySelector(".link5")
+const menuLinks = document.querySelectorAll('.nav-item')
 
-burgerIcon.addEventListener('click', function () {
+burgerIcon.addEventListener('click', () => {
    menuBody.classList.toggle("_active")
    burgerIcon.classList.toggle("_active")
    document.body.classList.toggle("_lock")
 })
 
-link1.addEventListener("click", function () {
-   if (burgerIcon.classList.contains("_active")) {
-   menuBody.classList.remove("_active")
-   burgerIcon.classList.remove("_active")
-   document.body.classList.remove("_lock")
-}
+menuLinks.forEach((link) => {
+   link.addEventListener('click', () => {
+      if (burgerIcon.classList.contains('_active')) {
+      menuBody.classList.remove("_active")
+      burgerIcon.classList.remove("_active")
+      document.body.classList.remove("_lock")
+      }
+   })
 })
 
-link2.addEventListener("click", function () {
-   if (burgerIcon.classList.contains("_active")) {
-   menuBody.classList.remove("_active")
-   burgerIcon.classList.remove("_active")
-   document.body.classList.remove("_lock")
-}
-})
 
-link3.addEventListener("click", function () {
-   if (burgerIcon.classList.contains("_active")) {
-   menuBody.classList.remove("_active")
-   burgerIcon.classList.remove("_active")
-   document.body.classList.remove("_lock")
-}
-})
 
-link4.addEventListener("click", function () {
-   if (burgerIcon.classList.contains("_active")) {
-   menuBody.classList.remove("_active")
-   burgerIcon.classList.remove("_active")
-   document.body.classList.remove("_lock")
-}
-})
 
-link5.addEventListener("click", function () {
-   if (burgerIcon.classList.contains("_active")) {
-   menuBody.classList.remove("_active")
-   burgerIcon.classList.remove("_active")
-   document.body.classList.remove("_lock")
-}
-})
 
-console.log("75")
