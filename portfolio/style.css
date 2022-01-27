@@ -100,7 +100,6 @@ text-align: center;
 
 .hero {
   padding: 160px 0 0 80px;
-  max-width: 500px;
   height: 330px;
 }
 
@@ -114,7 +113,8 @@ h1 {
 }
 
 .hero__subtitle {
-  margin: 0 30px 25px 0;
+  max-width: 470px;
+  margin: 0 0 25px 0;
   font-family: Inter;
   font-size: 20px;
   line-height: 40px;
@@ -193,7 +193,6 @@ h1 {
 }
 
 .skill-item {
-  padding-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -306,7 +305,7 @@ h1 {
 .price-item__container {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 25px;
   flex-wrap: wrap;
   height: max-content;
   margin: 0 auto 100px;
@@ -353,6 +352,7 @@ h1 {
 }
 
 .contacts {
+  padding-top: 60px;
   background: url(./assets/img/bottom.jpg) no-repeat;
   background-size: auto;
   height: 700px;
@@ -361,7 +361,7 @@ h1 {
 .contact__container {
   width: 450px;
   height: 445px;
-  margin: 60px 20px 195px auto;
+  margin: 0 20px 195px auto;
 }
 
 .contact-title {
@@ -532,11 +532,14 @@ a {
   }
 
   .skills-item__container {
+    padding: 0 10px 0;
+    margin-top: 65px;
     max-width: 728px;
     height: 520px;
     flex-wrap: wrap;
     height: max-content;
-    gap:40px;
+    gap: 35px;
+    
   }
 
   .skill-item__icon {
@@ -545,8 +548,11 @@ a {
 
   .skill-item {
     height: 224px;
-    margin: 0%;
+    max-width: 300px;
+    margin: 0;
   }
+
+
 
   .item-subtitle {
     line-height: 22px;
@@ -606,10 +612,6 @@ a {
     margin: 0;
   }
 
-  .skills-item__container {
-    margin-top: 51px;
-  }
-
   .slider-btn__container {
     width: 445px;
     height: 115px;
@@ -623,7 +625,7 @@ a {
   }
 
   .portfolio-title__container {
-    margin-top: 130px;
+    margin-top: 120px;
   }
 
   .portfolio-title {
@@ -719,7 +721,7 @@ a {
   }
 
   .contact__container {
-    margin: 60px 0px 0px 0px;
+    margin: 0 0px 0px 0px;
   }
 
   .contact-title {
