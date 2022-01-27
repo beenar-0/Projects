@@ -291,7 +291,7 @@ h1 {
   margin: auto;
   max-width: 1400px;
   height: 705px;
-  background: url(./assets/img/video-player.jpg) no-repeat;
+  background: url(./assets/img/video-player.jpg) center center no-repeat;
   background-size: auto;
 }
 
@@ -512,6 +512,13 @@ a {
     background: rgba(0, 0, 0, 0.5);
   }
 
+@media (max-width: 1440px) {
+
+    .skills-item__container {
+      gap: 30px;
+    }
+  }
+
 @media (max-width: 768px) {
   .container {
     max-width: 768px;
@@ -641,19 +648,16 @@ a {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    width: 450px;
     height: 3485px;
     gap: 25px;
   }
 
-  .portfolio-item {
-    width: 450px;
-    height: 560px;
-  }
+  
 
   .videoplayer__container {
     margin-top: 50px;
     background: url(./assets/img/tablet-video-player.jpg) no-repeat;
+    background-size: cover;
     max-width: 768px;
     height: 418px;
   }
@@ -896,10 +900,63 @@ a {
     overflow: hidden;
   }
 
+  
+
   @media (max-width: 620px) {
     .menu__body {
       width: 100%;
       left: 0%;
+    }
+
+    .slider-btn__container {
+      justify-content: center;
+    height: max-content;
+    width: 220px;
+    }
+
+    .portfolio-item {
+      width: 100%;
+    }
+
+    .portfolio-items__container {
+      height: max-content;
+    }
+
+    .title__container {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .slash {
+      margin: 0 3px;
+    }
+
+    .header-container {
+      padding: 20px;
+    }
+
+    .portfolio {
+      height: max-content;
+    }
+
+    .price-item {
+      width: 100%;
+    }
+
+    .contact__container {
+      width: 100%;
+    }
+
+    .contact-email {
+      width: 100%;
+    }
+
+    .contact-message {
+      width: 100%;
+    }
+
+    .contact-phone {
+      width: 100%;
     }
   }
 
@@ -946,5 +1003,11 @@ a {
   body {
     overflow-x: hidden;
   }
-    
+
+  .portfolio-item {
+    max-width: 450px;
+  }
+
+  
+
 }
