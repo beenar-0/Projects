@@ -6,13 +6,13 @@ const link3 = document.querySelector(".link3")
 const link4 = document.querySelector(".link4")
 const link5 = document.querySelector(".link5")
 
-burgerIcon.addEventListener('click', function (a) {
+burgerIcon.addEventListener('click', function () {
    menuBody.classList.toggle("_active")
    burgerIcon.classList.toggle("_active")
    document.body.classList.toggle("_lock")
 })
 
-link1.addEventListener("click", function (b) {
+link1.addEventListener("click", function () {
    if (burgerIcon.classList.contains("_active")) {
    menuBody.classList.remove("_active")
    burgerIcon.classList.remove("_active")
@@ -20,7 +20,7 @@ link1.addEventListener("click", function (b) {
 }
 })
 
-link2.addEventListener("click", function (c) {
+link2.addEventListener("click", function () {
    if (burgerIcon.classList.contains("_active")) {
    menuBody.classList.remove("_active")
    burgerIcon.classList.remove("_active")
@@ -28,7 +28,7 @@ link2.addEventListener("click", function (c) {
 }
 })
 
-link3.addEventListener("click", function (d) {
+link3.addEventListener("click", function () {
    if (burgerIcon.classList.contains("_active")) {
    menuBody.classList.remove("_active")
    burgerIcon.classList.remove("_active")
@@ -36,7 +36,7 @@ link3.addEventListener("click", function (d) {
 }
 })
 
-link4.addEventListener("click", function (e) {
+link4.addEventListener("click", function () {
    if (burgerIcon.classList.contains("_active")) {
    menuBody.classList.remove("_active")
    burgerIcon.classList.remove("_active")
@@ -44,7 +44,7 @@ link4.addEventListener("click", function (e) {
 }
 })
 
-link5.addEventListener("click", function (f) {
+link5.addEventListener("click", function () {
    if (burgerIcon.classList.contains("_active")) {
    menuBody.classList.remove("_active")
    burgerIcon.classList.remove("_active")
@@ -53,5 +53,3 @@ link5.addEventListener("click", function (f) {
 })
 
 console.log("75")
-
-alert("После открытия девтулса для проверки адаптива выставите ширину 768px и обновите страницу, после чего нажмите ctrl+0 (девтулс багается по какой-то причине и не выставляет масштаб 100%, хотя должен)")
