@@ -250,14 +250,14 @@ h1 {
   gap: 5px;
 }
 
-.slider-btn__container button:last-child{
+.slider-btn._active-button{
   background: #BDAE82;
   color: black; 
   transition: 0.3s;
 }
 
-.slider-btn__container button:last-child:hover{
-  color: #FFF;
+.slider-btn._active-button:hover{
+  color: #FFFFFF;
 }
 
 .slider-btn {
