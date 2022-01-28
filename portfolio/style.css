@@ -273,11 +273,12 @@ h1 {
   gap: 25px;
   height: max-content;
   justify-content: center;
+  transition: 0.3s;
 }
 
 .portfolio-item {
   display: inline-flex;
-  
+  transition: 0.3s;
 }
 
 .video-player__container {
@@ -411,6 +412,40 @@ h1 {
   font-size: 20px;
   line-height: 40px;
   color: #bdae82;
+}
+
+.button__container {
+  position: relative;
+  overflow: hidden;
+  width: 220px;
+  height: 55px;
+}
+
+.send-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sent {
+  font-family: Inter, serif;
+  font-size: 20px;
+  line-height: 55px;
+  text-align: center;
+  background: #BDAE82;
+  width: 220px;
+  height: 55px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transform: scale(0);
+  transition: 0.3s;
+}
+
+.sent._active {
+  transform: scale(1);
 }
 
 .footer-container {

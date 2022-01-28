@@ -153,22 +153,27 @@
          <section class="section contacts" id="contacts">
             <div class="contact__container">
                <h2 class="contact-title">Contact me</h2>
-               <div class="form-item">
-                  <label>
-                     <input type="email" placeholder="E-mail" class="contact-email">
-                  </label>
-               </div>
-               <div class="form-item">
-                  <label>
-                     <input type="tel" placeholder="Phone" class="contact-phone">
-                  </label>
-               </div>
-               <div class="form-item text-item">
-                  <label>
-                     <textarea name="message" class="contact-message" placeholder="Message"></textarea>
-                  </label>
-               </div>
-               <button class="btn">Send message</button>
+               <form action="#">
+                  <div class="form-item">
+                     <label>
+                        <input type="email" placeholder="E-mail" class="contact-email">
+                     </label>
+                  </div>
+                  <div class="form-item">
+                     <label>
+                        <input type="tel" placeholder="Phone" class="contact-phone">
+                     </label>
+                  </div>
+                  <div class="form-item text-item">
+                     <label>
+                        <textarea name="message" class="contact-message" placeholder="Message"></textarea>
+                     </label>
+                     <div class="button__container">
+                        <div class="sent">Sent!</div>
+                        <button type="reset" class="btn send-button">Send message</button>
+                     </div>
+                  </div>
+               </form>
             </div>
          </section>
       </div>

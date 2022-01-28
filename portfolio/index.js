@@ -1,8 +1,7 @@
 const burgerIcon = document.querySelector(".menu-icon")
 const menuBody = document.querySelector(".menu__body")
 const menuLinks = document.querySelectorAll('.nav-item')
-const portfolioItems = document.querySelectorAll(".portfolio-item")
-const portfolioButtons = document.querySelectorAll(".slider-btn")
+
 
 burgerIcon.addEventListener('click', () => {
    menuBody.classList.toggle("_active")
@@ -19,6 +18,9 @@ menuLinks.forEach((link) => {
       }
    })
 })
+
+const portfolioItems = document.querySelectorAll(".portfolio-item")
+const portfolioButtons = document.querySelectorAll(".slider-btn")
 
 portfolioButtons.forEach((button, buttonIndex) => {
    button.addEventListener('click', () => {
@@ -52,7 +54,13 @@ function changeButtonStyle () {
       })
 }
 
+const sendButton = document.querySelector(".send-button")
+const sent = document.querySelector(".sent")
 
+sendButton.addEventListener('click', () => {
+   sent.classList.add('_active')
+   setTimeout(() => {sent.classList.remove("_active")}, 3000)
+})
 
 
 
