@@ -59,7 +59,23 @@ function changeButtonStyle() {
     })
 }
 
+
 // Preload images
+
+const timesOfYear= ['winter', 'spring', 'summer', 'autumn']
+
+function preloadImages() {
+    timesOfYear.forEach((timeOfYear) => {
+        for (let i = 0; i < 6; i++) {
+            const img = new Image()
+            img.src = `./assets/img/${timeOfYear}/${i+1}.jpg`
+        }
+    })
+
+}
+
+preloadImages()
+
 
 // "Send" button
 
@@ -72,6 +88,7 @@ sendButton.addEventListener('click', () => {
         sent.classList.remove("_active")
     }, 3000)
 })
+
 
 // Changing languages
 
