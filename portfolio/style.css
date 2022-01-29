@@ -74,81 +74,92 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 
 /*dark*/
-/*:root {*/
-/*    --text-color: #FFF;*/
-/*    --body-color: #000;*/
-/*    --link-color: #FFF;*/
-/*    --link-hover-color: #BDAE82;*/
-/*    --contact-bg: rgba(0, 0, 0, 0.5);*/
-/*    --bg-head: url('./assets/img/head.jpg');*/
-/*    --bg-bottom: url('./assets/img/bottom.jpg');*/
-/*    --filter: invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);*/
-/*    --facebook-icon: url('./assets/svg/footer-facebook.svg');*/
-/*    --insta-icon: url('./assets/svg/footer-insta.svg');*/
-/*    --twitter-icon: url('./assets/svg/footer-twitter.svg');*/
-/*    --printest-icon: url('./assets/svg/footer-printest.svg');*/
-/*    --camera-logo: url('./assets/svg/camera-header.svg');*/
-/*    --title-color: #BDAE82;*/
-/*    --hero-contact__button-bg: #BDAE82;*/
-/*    --hero-contact__button-text: #000;*/
-/*    --hero-contact__button-bg-hover: #BDAE82;*/
-/*    --hero-contact__button-text-hover: #FFF;*/
-/*    --btn-bg: #BDAE82;*/
-/*    --btn-text: #000;*/
-/*    --btn-bg-hover: #BDAE82;*/
-/*    --btn-text-hover: #FFF;*/
-/*    --slider-btn-text: #BDAE82;*/
-/*    --slider-btn-bg: #000;*/
-/*    --slider-btn-text-hover: #FFF;*/
-/*    --slider-btn-bg-hover: #000;*/
-/*    --slider-btn-border: #BDAE82;*/
-/*    --slider-btn-text-active: #000;*/
-/*    --slider-btn-bg-active: #BDAE82;*/
-/*    --slider-btn-text-hover-active: #FFF;*/
-/*    --slider-btn-bg-hover-active: #BDAE82;*/
-/*    --nav-link-hover: #BDAE82;*/
-/*    --sent-btn-text-color: #000;*/
-/*    --switch-lang-active: #BDAE82;*/
-/*}*/
+:root {
+    --text-color: #FFF;
+    --body-color: #000;
+    --link-color: #FFF;
+    --link-hover-color: #BDAE82;
+    --contact-bg: rgba(0, 0, 0, 0.5);
+    --bg-head: url('./assets/img/head.jpg');
+    --bg-bottom: url('./assets/img/bottom.jpg');
+    --filter: invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);
+    --facebook-icon: url('./assets/svg/footer-facebook.svg');
+    --insta-icon: url('./assets/svg/footer-insta.svg');
+    --twitter-icon: url('./assets/svg/footer-twitter.svg');
+    --printest-icon: url('./assets/svg/footer-printest.svg');
+    --camera-logo: url('./assets/svg/camera-header.svg');
+    --title-color: #BDAE82;
+    --hero-contact__button-bg: #BDAE82;
+    --hero-contact__button-text: #000;
+    --hero-contact__button-bg-hover: #BDAE82;
+    --hero-contact__button-text-hover: #FFF;
+    --btn-bg: #BDAE82;
+    --btn-text: #000;
+    --btn-bg-hover: #BDAE82;
+    --btn-text-hover: #FFF;
+    --slider-btn-text: #BDAE82;
+    --slider-btn-bg: #000;
+    --slider-btn-text-hover: #FFF;
+    --slider-btn-bg-hover: #000;
+    --slider-btn-border: #BDAE82;
+    --slider-btn-text-active: #000;
+    --slider-btn-bg-active: #BDAE82;
+    --slider-btn-text-hover-active: #FFF;
+    --slider-btn-bg-hover-active: #BDAE82;
+    --nav-link-hover: #BDAE82;
+    --sent-btn-text-color: #000;
+    --switch-lang-active: #BDAE82;
+    --bg-head-tablet: url('./assets/img/tablet-head.jpg');
+    --contacts-bg-tablet: url('./assets/img/tablet-contacts.jpg');
+    --burger-link-color: #BDAE82;
+    --burger-link-color-hover: #FFF;
+    --theme-icon: url('./assets/svg/light_theme.svg');
+    --theme-icon-hover: invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);
+}
 
 
 /* light*/
-:root {
-    --text-color: #000;
-    --body-color: #FFF;
-    --link-color: #000;
-    --link-hover-color: #BDAE82;
-    --contact-bg: rgba(255, 255, 255, 0.5);
-    --bg-head: url('./assets/img/head-light.jpg');
-    --bg-bottom: url('./assets/img/bottom-light.jpg');
-    --filter: invert(86%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);
-    --facebook-icon: url('./assets/svg/footer-facebook-light.svg');
-    --insta-icon: url('./assets/svg/footer-insta-light.svg');
-    --twitter-icon: url('./assets/svg/footer-twitter-light.svg');
-    --printest-icon: url('./assets/svg/footer-printest-light.svg');
-    --camera-logo: url('./assets/svg/camera-header-light.svg');
-    --title-color: #000;
-    --hero-contact__button-bg: #FFF;
-    --hero-contact__button-text: #000;
-    --hero-contact__button-bg-hover: #000;
-    --hero-contact__button-text-hover: #BDAE82;
-    --btn-bg: #BDAE82;
-    --btn-text: #000;
-    --btn-bg-hover: #000;
-    --btn-text-hover: #BDAE82;
-    --slider-btn-text: #000;
-    --slider-btn-bg: #BDAE82;
-    --slider-btn-text-hover: #BDAE82;
-    --slider-btn-bg-hover: #000;
-    --slider-btn-border: #BDAE82;
-    --slider-btn-text-active: #BDAE82;
-    --slider-btn-bg-active: #1C1C1C;
-    --slider-btn-text-hover-active: #FFF;
-    --slider-btn-bg-hover-active: #000;
-    --nav-link-hover: #FFF;
-    --sent-btn-text-color: #BDAE82;
-    --switch-lang-active: #FFF;
-}
+/*:root {*/
+/*    --text-color: #000;*/
+/*    --body-color: #FFF;*/
+/*    --link-color: #000;*/
+/*    --link-hover-color: #BDAE82;*/
+/*    --contact-bg: rgba(255, 255, 255, 0.5);*/
+/*    --bg-head: url('./assets/img/head-light.jpg');*/
+/*    --bg-bottom: url('./assets/img/bottom-light.jpg');*/
+/*    --filter: invert(86%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);*/
+/*    --facebook-icon: url('./assets/svg/footer-facebook-light.svg');*/
+/*    --insta-icon: url('./assets/svg/footer-insta-light.svg');*/
+/*    --twitter-icon: url('./assets/svg/footer-twitter-light.svg');*/
+/*    --printest-icon: url('./assets/svg/footer-printest-light.svg');*/
+/*    --camera-logo: url('./assets/svg/camera-header-light.svg');*/
+/*    --title-color: #000;*/
+/*    --hero-contact__button-bg: #FFF;*/
+/*    --hero-contact__button-text: #000;*/
+/*    --hero-contact__button-bg-hover: #000;*/
+/*    --hero-contact__button-text-hover: #BDAE82;*/
+/*    --btn-bg: #BDAE82;*/
+/*    --btn-text: #000;*/
+/*    --btn-bg-hover: #000;*/
+/*    --btn-text-hover: #BDAE82;*/
+/*    --slider-btn-text: #000;*/
+/*    --slider-btn-bg: #BDAE82;*/
+/*    --slider-btn-text-hover: #BDAE82;*/
+/*    --slider-btn-bg-hover: #000;*/
+/*    --slider-btn-border: #BDAE82;*/
+/*    --slider-btn-text-active: #BDAE82;*/
+/*    --slider-btn-bg-active: #1C1C1C;*/
+/*    --slider-btn-text-hover-active: #FFF;*/
+/*    --slider-btn-bg-hover-active: #000;*/
+/*    --nav-link-hover: #FFF;*/
+/*    --sent-btn-text-color: #BDAE82;*/
+/*    --switch-lang-active: #FFF;*/
+/*    --bg-head-tablet: url('./assets/img/head-light-tablet.jpg');*/
+/*    --burger-link-color: #000;*/
+/*    --burger-link-color-hover: #BDAE82;*/
+/*    --theme-icon: url('./assets/svg/dark_theme.svg');*/
+/*    --theme-icon-hover: invert(99%) sepia(0%) saturate(5135%) hue-rotate(201deg) brightness(115%) contrast(100%);*/
+/*}*/
 
 
 html {
@@ -720,6 +731,19 @@ a.nav-link:hover {
     cursor: pointer;
 }
 
+.switch-theme {
+    width: 45px;
+    height: 45px;
+    background: var(--theme-icon) center no-repeat;
+    margin: 0 25px 0 45px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.switch-theme:hover {
+    filter: var(--theme-icon-hover);
+}
+
 .form-item input,
 .form-item textarea {
     background: var(--contact-bg);
@@ -779,11 +803,11 @@ a.nav-link:hover {
     .header-container {
         padding: 20px 64px 20px 60px;
         height: 90px;
-        background: url(./assets/img/tablet-head.jpg) no-repeat center 0;
+        background: var(--bg-head-tablet) no-repeat center 0;
     }
 
     .hero__container {
-        background: url(./assets/img/tablet-head.jpg) center -89px no-repeat;
+        background: var(--bg-head-tablet) center -89px no-repeat;
         background-size: auto;
         height: 500px;
     }
@@ -925,7 +949,7 @@ a.nav-link:hover {
     }
 
     .contacts {
-        background: url(./assets/img/tablet-contacts.jpg) no-repeat;
+        background: var(--contacts-bg-tablet) no-repeat;
         max-width: 768px;
         height: 600px;
         display: flex;
@@ -1108,6 +1132,18 @@ a.nav-link:hover {
         overflow: hidden;
     }
 
+    a.nav-link {
+        color: var(--burger-link-color);
+        font-family: Merriweather, serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 73px;
+    }
+
+    a.nav-link:hover {
+        color: var(--burger-link-color-hover);
+    }
 
     .menu-icon._active {
         position: fixed;
