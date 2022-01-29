@@ -73,21 +73,86 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 
+/*dark*/
+/*:root {*/
+/*    --text-color: #FFF;*/
+/*    --body-color: #000;*/
+/*    --link-color: #FFF;*/
+/*    --link-hover-color: #BDAE82;*/
+/*    --contact-bg: rgba(0, 0, 0, 0.5);*/
+/*    --bg-head: url('./assets/img/head.jpg');*/
+/*    --bg-bottom: url('./assets/img/bottom.jpg');*/
+/*    --filter: invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);*/
+/*    --facebook-icon: url('./assets/svg/footer-facebook.svg');*/
+/*    --insta-icon: url('./assets/svg/footer-insta.svg');*/
+/*    --twitter-icon: url('./assets/svg/footer-twitter.svg');*/
+/*    --printest-icon: url('./assets/svg/footer-printest.svg');*/
+/*    --camera-logo: url('./assets/svg/camera-header.svg');*/
+/*    --title-color: #BDAE82;*/
+/*    --hero-contact__button-bg: #BDAE82;*/
+/*    --hero-contact__button-text: #000;*/
+/*    --hero-contact__button-bg-hover: #BDAE82;*/
+/*    --hero-contact__button-text-hover: #FFF;*/
+/*    --btn-bg: #BDAE82;*/
+/*    --btn-text: #000;*/
+/*    --btn-bg-hover: #BDAE82;*/
+/*    --btn-text-hover: #FFF;*/
+/*    --slider-btn-text: #BDAE82;*/
+/*    --slider-btn-bg: #000;*/
+/*    --slider-btn-text-hover: #FFF;*/
+/*    --slider-btn-bg-hover: #000;*/
+/*    --slider-btn-border: #BDAE82;*/
+/*    --slider-btn-text-active: #000;*/
+/*    --slider-btn-bg-active: #BDAE82;*/
+/*    --slider-btn-text-hover-active: #FFF;*/
+/*    --slider-btn-bg-hover-active: #BDAE82;*/
+/*    --nav-link-hover: #BDAE82;*/
+/*    --sent-btn-text-color: #000;*/
+/*    --switch-lang-active: #BDAE82;*/
+/*}*/
+
+
+/* light*/
 :root {
-    --text-color: #FFF;
-    --body-color: #000;
-    --link-color: #FFF;
+    --text-color: #000;
+    --body-color: #FFF;
+    --link-color: #000;
     --link-hover-color: #BDAE82;
-    --contact-bg: rgba(0, 0, 0, 0.5);
+    --contact-bg: rgba(255, 255, 255, 0.5);
+    --bg-head: url('./assets/img/head-light.jpg');
+    --bg-bottom: url('./assets/img/bottom-light.jpg');
+    --filter: invert(86%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);
+    --facebook-icon: url('./assets/svg/footer-facebook-light.svg');
+    --insta-icon: url('./assets/svg/footer-insta-light.svg');
+    --twitter-icon: url('./assets/svg/footer-twitter-light.svg');
+    --printest-icon: url('./assets/svg/footer-printest-light.svg');
+    --camera-logo: url('./assets/svg/camera-header-light.svg');
+    --title-color: #000;
+    --hero-contact__button-bg: #FFF;
+    --hero-contact__button-text: #000;
+    --hero-contact__button-bg-hover: #000;
+    --hero-contact__button-text-hover: #BDAE82;
+    --btn-bg: #BDAE82;
+    --btn-text: #000;
+    --btn-bg-hover: #000;
+    --btn-text-hover: #BDAE82;
+    --slider-btn-text: #000;
+    --slider-btn-bg: #BDAE82;
+    --slider-btn-text-hover: #BDAE82;
+    --slider-btn-bg-hover: #000;
+    --slider-btn-border: #BDAE82;
+    --slider-btn-text-active: #BDAE82;
+    --slider-btn-bg-active: #1C1C1C;
+    --slider-btn-text-hover-active: #FFF;
+    --slider-btn-bg-hover-active: #000;
+    --nav-link-hover: #FFF;
+    --sent-btn-text-color: #BDAE82;
+    --switch-lang-active: #FFF;
 }
 
 
 html {
     scroll-behavior: smooth;
-}
-
-a {
-    color: var(--link-color);
 }
 
 body {
@@ -106,14 +171,15 @@ body {
     flex-direction: row;
     padding: 20px;
     height: 90px;
-    background: url('./assets/img/head.jpg') no-repeat center 0;
+    background: var(--bg-head) no-repeat center 0;
     background-size: auto;
 }
 
 .logo-container {
     width: 50px;
     height: 50px;
-    background: url(./assets/svg/camera-header.svg) no-repeat;
+    background: var(--camera-logo) no-repeat;
+    fill: black;
 }
 
 .nav-container {
@@ -150,11 +216,11 @@ body {
 }
 
 .en {
-    color: var(--link-hover-color);
+    color: var(--nav-link-hover);
 }
 
 .hero__container {
-    background: url(./assets/img/head.jpg) center -90px no-repeat;
+    background: var(--bg-head) center -90px no-repeat;
     background-size: auto;
     height: 820px;
     max-width: 1440px;
@@ -189,7 +255,8 @@ h1 {
     font-size: 20px;
     line-height: 50px;
     text-align: center;
-    background: var(--link-hover-color);
+    background: var(--btn-bg);
+    color: var(--btn-text);
     display: block;
     width: 220px;
     height: 55px;
@@ -197,12 +264,27 @@ h1 {
 }
 
 .btn:hover {
-    color: var(--text-color);
+    color: var(--btn-text-hover);
+    background: var(--btn-bg-hover);
     cursor: pointer;
 }
 
-.hire-me__btn {
+.hero-contact__btn {
+    font-family: Inter, serif;
+    font-size: 20px;
     line-height: 55px;
+    text-align: center;
+    background: var(--hero-contact__button-bg);
+    display: block;
+    width: 220px;
+    height: 55px;
+    transition: 0.3s;
+}
+
+.hero-contact__btn:hover {
+    cursor: pointer;
+    color: var(--hero-contact__button-text-hover);
+    background-color: var(--hero-contact__button-bg-hover);
 }
 
 .title__container {
@@ -220,7 +302,7 @@ h1 {
     font-size: 40px;
     line-height: 80px;
     text-align: center;
-    color: var(--link-hover-color);
+    color: var(--title-color);
 }
 
 .section-title::before,
@@ -228,7 +310,7 @@ h1 {
     content: '';
     width: 275px;
     height: 2px;
-    background-color: var(--link-hover-color);
+    background-color: var(--title-color);
 }
 
 .section-title::before {
@@ -316,19 +398,34 @@ h1 {
 }
 
 .slider-btn._active-button {
-    background: var(--link-hover-color);
-    color: var(--body-color);
+    background: var(--slider-btn-bg-active);
+    color: var(--slider-btn-text-active);
     transition: 0.3s;
 }
 
 .slider-btn._active-button:hover {
-    color: var(--text-color);
+    color: var(--slider-btn-text-hover-active);
+    background-color: var(--slider-btn-bg-hover-active);
 }
 
 .slider-btn {
-    border: 2px solid var(--link-hover-color);
-    background-color: var(--body-color);
-    color: var(--link-hover-color);
+    border: 2px solid var(--slider-btn-border);
+    background-color: var(--slider-btn-bg);
+    color: var(--slider-btn-text);
+    font-family: Inter, serif;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+    width: 220px;
+    height: 55px;
+    transition: 0.3s;
+}
+
+.slider-btn:hover {
+    color: var(--slider-btn-text-hover);
+    background: var(--slider-btn-bg-hover);
+    cursor: pointer;
 }
 
 .portfolio-items__container {
@@ -396,7 +493,7 @@ h1 {
 .price-item__price {
     display: block;
     text-align: center;
-    color: var(--link-hover-color);
+    color: var(--title-color);
     font-family: Merriweather, serif;
     font-weight: bold;
     font-size: 24px;
@@ -419,7 +516,7 @@ h1 {
 
 .contacts {
     padding-top: 60px;
-    background: url(./assets/img/bottom.jpg) no-repeat;
+    background: var(--bg-bottom) no-repeat;
     background-size: auto;
     height: 700px;
 }
@@ -435,7 +532,7 @@ h1 {
     font-weight: bold;
     font-size: 40px;
     line-height: 80px;
-    color: var(--link-hover-color);
+    color: var(--title-color);
     margin: 0 0 40px 0;
 }
 
@@ -453,7 +550,7 @@ h1 {
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-    color: var(--link-hover-color);
+    color: var(--title-color);
 }
 
 .contact-email::placeholder,
@@ -464,7 +561,7 @@ h1 {
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-    color: var(--link-hover-color);
+    color: var(--title-color);
 }
 
 .contact-message {
@@ -473,14 +570,14 @@ h1 {
     height: 100px;
     resize: none;
     background-color: transparent;
-    border: 2px solid var(--link-hover-color);
+    border: 2px solid #BDAE82;
     padding: 0 0 40px 20px;
     font-family: Inter, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-    color: var(--link-hover-color);
+    color: var(--title-color);
 }
 
 .btn-link__container {
@@ -505,7 +602,8 @@ h1 {
     font-size: 20px;
     line-height: 55px;
     text-align: center;
-    background: var(--link-hover-color);
+    background: var(--hero-contact__button-bg-hover);
+    color: var(--sent-btn-text-color);
     width: 220px;
     height: 55px;
     display: block;
@@ -564,36 +662,53 @@ h1 {
 }
 
 .inst {
-    background: url(./assets/svg/footer-insta.svg) no-repeat;
+    background: var(--insta-icon) no-repeat;
 }
 
 .fb {
-    background: url(./assets/svg/footer-facebook.svg) no-repeat;
+    background: var(--facebook-icon) no-repeat;
 }
 
 .twit {
-    background: url(./assets/svg/footer-twitter.svg) no-repeat;
+    background: var(--twitter-icon) no-repeat;
 }
 
 .print {
-    background: url(./assets/svg/footer-printest.svg) no-repeat;
+    background: var(--printest-icon) no-repeat;
 }
 
 .logo {
     transition: 0.3s;
 }
 
-.logo:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+a.logo-text {
+    color: var(--link-color);
+    transition: 0.3s;
+}
+
+a.logo-text:hover {
+    color: var(--link-hover-color);
     cursor: pointer;
 }
 
-a:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+.logo-text:hover {
+    color: var(--link-hover-color);
+    cursor: pointer;
 }
 
-a {
+.logo:hover {
+    filter: var(--filter);
+    cursor: pointer;
+}
+
+.nav-link {
+    color: var(--link-color);
     transition: 0.3s;
+}
+
+a.nav-link:hover {
+    color: var(--nav-link-hover);
+    cursor: pointer;
 }
 
 .ru {
@@ -601,7 +716,7 @@ a {
 }
 
 .ru:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    filter: var(--filter);
     cursor: pointer;
 }
 
