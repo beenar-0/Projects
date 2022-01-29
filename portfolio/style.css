@@ -370,6 +370,10 @@ h1 {
     height: 505px;
 }
 
+.price-btn__container {
+    margin: 40px auto 0;
+}
+
 .price-item__title {
     text-align: center;
     color: #FFF;
@@ -470,7 +474,11 @@ h1 {
     color: #bdae82;
 }
 
-.button__container {
+.btn-link__container {
+    width: 220px;
+}
+
+.send-button__container {
     position: relative;
     overflow: hidden;
     width: 220px;
