@@ -80,14 +80,14 @@ h1, h2, h3, h4, h5, h6 {
     --link-color: #FFF;
     --link-hover-color: #BDAE82;
     --contact-bg: rgba(0, 0, 0, 0.5);
-    --bg-head: url('./assets/img/head.jpg');
-    --bg-bottom: url('./assets/img/bottom.jpg');
+    --bg-head: url(./assets/img/head.jpg);
+    --bg-bottom: url(./assets/img/bottom.jpg);
     --filter: invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);
-    --facebook-icon: url('./assets/svg/footer-facebook.svg');
-    --insta-icon: url('./assets/svg/footer-insta.svg');
-    --twitter-icon: url('./assets/svg/footer-twitter.svg');
-    --printest-icon: url('./assets/svg/footer-printest.svg');
-    --camera-logo: url('./assets/svg/camera-header.svg');
+    --facebook-icon: url(./assets/svg/footer-facebook.svg);
+    --insta-icon: url(./assets/svg/footer-insta.svg);
+    --twitter-icon: url(./assets/svg/footer-twitter.svg);
+    --printest-icon: url(./assets/svg/footer-printest.svg);
+    --camera-logo: url(./assets/svg/camera-header.svg);
     --title-color: #BDAE82;
     --hero-contact__button-bg: #BDAE82;
     --hero-contact__button-text: #000;
@@ -109,11 +109,10 @@ h1, h2, h3, h4, h5, h6 {
     --nav-link-hover: #BDAE82;
     --sent-btn-text-color: #000;
     --switch-lang-active: #BDAE82;
-    --bg-head-tablet: url('./assets/img/tablet-head.jpg');
-    --contacts-bg-tablet: url('./assets/img/tablet-contacts.jpg');
+    --bg-head-tablet: url(./assets/img/tablet-head.jpg);
+    --contacts-bg-tablet: url(./assets/img/tablet-contacts.jpg);
     --burger-link-color: #BDAE82;
     --burger-link-color-hover: #FFF;
-    --theme-icon: url('./assets/svg/light_theme.svg');
     --theme-icon-hover: invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%);
 }
 
@@ -157,7 +156,6 @@ h1, h2, h3, h4, h5, h6 {
 /*    --bg-head-tablet: url('./assets/img/head-light-tablet.jpg');*/
 /*    --burger-link-color: #000;*/
 /*    --burger-link-color-hover: #BDAE82;*/
-/*    --theme-icon: url('./assets/svg/dark_theme.svg');*/
 /*    --theme-icon-hover: invert(99%) sepia(0%) saturate(5135%) hue-rotate(201deg) brightness(115%) contrast(100%);*/
 /*}*/
 
@@ -734,11 +732,16 @@ a.nav-link:hover {
 .switch-theme {
     width: 45px;
     height: 45px;
-    background: var(--theme-icon) center no-repeat;
     margin: 0 25px 0 45px;
     transition: 0.3s;
     cursor: pointer;
+    background: url('./assets/svg/light_theme.svg') center no-repeat;
 }
+
+.switch-theme._light {
+    background: url('./assets/svg/dark_theme.svg') center no-repeat;
+}
+
 
 .switch-theme:hover {
     filter: var(--theme-icon-hover);
