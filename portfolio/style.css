@@ -73,16 +73,25 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 
+:root {
+    --text-color: #FFF;
+    --body-color: #000;
+    --link-color: #FFF;
+    --link-hover-color: #BDAE82;
+    --contact-bg: rgba(0, 0, 0, 0.5);
+}
+
+
 html {
     scroll-behavior: smooth;
 }
 
 a {
-    color: #FFF;
+    color: var(--link-color);
 }
 
 body {
-    background-color: #000;
+    background-color: var(--body-color);
     margin: 0 auto;
 }
 
@@ -112,7 +121,7 @@ body {
     font-family: Inter, serif;
     font-size: 20px;
     line-height: 50px;
-    color: #FFF
+    color: var(--link-color);
 }
 
 .navigation {
@@ -141,7 +150,7 @@ body {
 }
 
 .en {
-    color: #BDAE82;
+    color: var(--link-hover-color);
 }
 
 .hero__container {
@@ -162,7 +171,7 @@ h1 {
     font-weight: bold;
     font-size: 60px;
     line-height: 120px;
-    color: #FFFFFF;
+    color: var(--text-color);
     margin: 0 0 10px 0;
 }
 
@@ -172,7 +181,7 @@ h1 {
     font-family: Inter, serif;
     font-size: 20px;
     line-height: 40px;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .btn {
@@ -180,7 +189,7 @@ h1 {
     font-size: 20px;
     line-height: 50px;
     text-align: center;
-    background: #BDAE82;
+    background: var(--link-hover-color);
     display: block;
     width: 220px;
     height: 55px;
@@ -188,7 +197,7 @@ h1 {
 }
 
 .btn:hover {
-    color: #FFF;
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -211,7 +220,7 @@ h1 {
     font-size: 40px;
     line-height: 80px;
     text-align: center;
-    color: #BDAE82;
+    color: var(--link-hover-color);
 }
 
 .section-title::before,
@@ -219,7 +228,7 @@ h1 {
     content: '';
     width: 275px;
     height: 2px;
-    background-color: #BDAE82;
+    background-color: var(--link-hover-color);
 }
 
 .section-title::before {
@@ -236,7 +245,7 @@ h1 {
 
 .skills-item__container {
     display: flex;
-    color: #FFF;
+    color: var(--link-color);
     font-family: Inter, serif;
     text-align: center;
     flex-wrap: wrap;
@@ -307,19 +316,19 @@ h1 {
 }
 
 .slider-btn._active-button {
-    background: #BDAE82;
-    color: black;
+    background: var(--link-hover-color);
+    color: var(--body-color);
     transition: 0.3s;
 }
 
 .slider-btn._active-button:hover {
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .slider-btn {
-    border: 2px solid #BDAE82;
-    background-color: black;
-    color: #BDAE82;
+    border: 2px solid var(--link-hover-color);
+    background-color: var(--body-color);
+    color: var(--link-hover-color);
 }
 
 .portfolio-items__container {
@@ -365,7 +374,7 @@ h1 {
 }
 
 .price-item {
-    border: 3px solid #BDAE82;
+    border: 3px solid var(--link-hover-color);
     width: 450px;
     height: 505px;
 }
@@ -376,7 +385,7 @@ h1 {
 
 .price-item__title {
     text-align: center;
-    color: #FFF;
+    color: var(--text-color);
     font-family: Merriweather, serif;
     font-weight: bold;
     font-size: 28px;
@@ -387,7 +396,7 @@ h1 {
 .price-item__price {
     display: block;
     text-align: center;
-    color: #BDAE82;
+    color: var(--link-hover-color);
     font-family: Merriweather, serif;
     font-weight: bold;
     font-size: 24px;
@@ -396,7 +405,7 @@ h1 {
 }
 
 .price-item__option-list__option {
-    color: #FFF;
+    color: var(--text-color);
     font-family: Inter, serif;
     font-size: 18px;
     line-height: 36px;
@@ -426,7 +435,7 @@ h1 {
     font-weight: bold;
     font-size: 40px;
     line-height: 80px;
-    color: #BDAE82;
+    color: var(--link-hover-color);
     margin: 0 0 40px 0;
 }
 
@@ -437,14 +446,14 @@ h1 {
     width: 450px;
     height: 50px;
     background-color: transparent;
-    border: 2px solid #bdae82;
+    border: 2px solid var(--link-hover-color);
     padding-left: 20px;
     font-family: Inter, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-    color: #bdae82;
+    color: var(--link-hover-color);
 }
 
 .contact-email::placeholder,
@@ -455,7 +464,7 @@ h1 {
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-    color: #bdae82;
+    color: var(--link-hover-color);
 }
 
 .contact-message {
@@ -464,14 +473,14 @@ h1 {
     height: 100px;
     resize: none;
     background-color: transparent;
-    border: 2px solid #bdae82;
+    border: 2px solid var(--link-hover-color);
     padding: 0 0 40px 20px;
     font-family: Inter, serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-    color: #bdae82;
+    color: var(--link-hover-color);
 }
 
 .btn-link__container {
@@ -496,7 +505,7 @@ h1 {
     font-size: 20px;
     line-height: 55px;
     text-align: center;
-    background: #BDAE82;
+    background: var(--link-hover-color);
     width: 220px;
     height: 55px;
     display: block;
@@ -520,7 +529,7 @@ h1 {
     font-family: Inter, serif;
     font-size: 20px;
     line-height: 50px;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .footer-container__left {
@@ -598,7 +607,7 @@ a {
 
 .form-item input,
 .form-item textarea {
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--contact-bg);
 }
 
 @media (max-width: 1440px) {
@@ -827,31 +836,31 @@ a {
         margin: 0 0 20px 0;
         width: 450px;
         height: 50px;
-        background: rgba(0, 0, 0, 0.5);
-        border: 2px solid #bdae82;
+        background: var(--contact-bg);
+        border: 2px solid var(--link-hover-color);
         padding-left: 20px;
         font-family: Inter, serif;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
         line-height: 40px;
-        color: #bdae82;
+        color: var(--link-hover-color);
     }
 
     .contact-message {
-        border: 2px solid #bdae82;
+        border: 2px solid var(--link-hover-color);
         padding-left: 20px;
         font-family: Inter, serif;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
         line-height: 40px;
-        color: #bdae82;
+        color: var(--link-hover-color);
     }
 
     .form-item input,
     .form-item textarea {
-        background: rgba(0, 0, 0, 0.5);
+        background: var(--contact-bg);
     }
 
     .text-item {
@@ -949,7 +958,7 @@ a {
         position: absolute;
         height: 10%;
         width: 100%;
-        background-color: #FFF;
+        background-color: var(--text-color);
         transition: all 0.3s ease 0s;
     }
 
@@ -977,7 +986,7 @@ a {
         left: 20%;
         width: 80%;
         height: 100%;
-        background-color: black;
+        background-color: var(--body-color);
         transition: all 0.3s ease 0s;
         transform: translate(100%, 0px);
         padding: 134px 343px 461px 107px;
@@ -1017,7 +1026,7 @@ a {
         font-weight: normal;
         font-size: 35px;
         line-height: 73px;
-        color: #FFFFFF;
+        color: var(--text-color);
         margin: 0 0 16px 0;
     }
 
