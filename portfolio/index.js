@@ -1,14 +1,22 @@
 // Switching theme
 
+let theme
 const switchThemeIcon = document.querySelector(".switch-theme")
 
 switchThemeIcon.addEventListener('click', () => {
     switchThemeIcon.classList.toggle("_light")
-    changeTheme()
+    if (switchThemeIcon.classList.contains("_light")) {
+        theme = 'light'
+        changeTheme(theme)
+    } else {
+        theme = 'dark'
+        changeTheme(theme)
+    }
 })
 
-function changeTheme() {
-    if (switchThemeIcon.classList.contains("_light")) {
+
+function changeTheme(theme) {
+    if (theme === 'light') {
         document.documentElement.style.setProperty('--text-color', '#000')
         document.documentElement.style.setProperty('--body-color', '#FFF')
         document.documentElement.style.setProperty('--link-color', '#000')
@@ -48,7 +56,7 @@ function changeTheme() {
         document.documentElement.style.setProperty('--burger-link-color', '#000')
         document.documentElement.style.setProperty('--burger-link-color-hover', '#BDAE82')
         document.documentElement.style.setProperty('--theme-icon-hover', 'invert(99%) sepia(0%) saturate(5135%) hue-rotate(201deg) brightness(115%) contrast(100%)')
-    } else {
+    } else if (theme === 'dark') {
         document.documentElement.style.setProperty('--text-color', '#FFF')
         document.documentElement.style.setProperty('--body-color', '#000')
         document.documentElement.style.setProperty('--link-color', '#FFF')
@@ -90,6 +98,27 @@ function changeTheme() {
         document.documentElement.style.setProperty('--theme-icon-hover', 'invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%)')
     }
 }
+
+
+// Save and load from local storage
+
+function setLocalStorage() {
+    localStorage.setItem('theme', theme);
+}
+
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+    if (localStorage.getItem('theme')) {
+        theme = localStorage.getItem('theme');
+        changeTheme(theme);
+        if (theme === 'light') {
+            switchThemeIcon.classList.toggle("_light")
+        }
+    }
+}
+
+window.addEventListener('load', getLocalStorage)
 
 
 // Changing portfolio images
