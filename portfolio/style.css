@@ -739,7 +739,7 @@ a.nav-link:hover {
 }
 
 .switch-theme._light {
-    background: url('./assets/svg/dark_theme.svg') center no-repeat;
+    background: url('./assets/svg/dark_theme.svg') no-repeat;
 }
 
 
