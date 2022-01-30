@@ -1,5 +1,6 @@
 // Burger-menu
 
+const switchThemeIcon = document.querySelector(".switch-theme")
 const burgerIcon = document.querySelector(".menu-icon")
 const menuBody = document.querySelector(".menu__body")
 const menuLinks = document.querySelectorAll('.nav-item')
@@ -9,6 +10,7 @@ burgerIcon.addEventListener('click', () => {
     menuBody.classList.toggle("_active")
     burgerIcon.classList.toggle("_active")
     document.body.classList.toggle("_lock")
+    switchThemeIcon.classList.toggle("_hide")
 })
 
 menuLinks.forEach((link) => {
@@ -90,13 +92,7 @@ sendButton.addEventListener('click', () => {
 })
 
 
-// Changing theme
-
-// document.documentElement.style.setProperty('--body-color', '#fff');
-// document.documentElement.style.setProperty('--text-color', '#000');
-// document.documentElement.style.setProperty('--hover-color', '#000');
-
-const switchThemeIcon = document.querySelector(".switch-theme")
+// Switching theme
 
 switchThemeIcon.addEventListener('click', () => {
     switchThemeIcon.classList.toggle("_light")
@@ -139,7 +135,8 @@ function changeTheme() {
         document.documentElement.style.setProperty('--nav-link-hover', '#FFF')
         document.documentElement.style.setProperty('--sent-btn-text-color', '#BDAE82')
         document.documentElement.style.setProperty('--switch-lang-active', '#FFF')
-        document.documentElement.style.setProperty('--bg-head-tablet', 'rl(./assets/img/head-light-tablet.jpg)')
+        document.documentElement.style.setProperty('--bg-head-tablet', 'url(./assets/img/head-light-tablet.jpg)')
+        document.documentElement.style.setProperty('--contacts-bg-tablet', 'url(./assets/img/bottom-tablet-light.jpg)')
         document.documentElement.style.setProperty('--burger-link-color', '#000')
         document.documentElement.style.setProperty('--burger-link-color-hover', '#BDAE82')
         document.documentElement.style.setProperty('--theme-icon-hover', 'invert(99%) sepia(0%) saturate(5135%) hue-rotate(201deg) brightness(115%) contrast(100%)')
@@ -178,7 +175,8 @@ function changeTheme() {
         document.documentElement.style.setProperty('--nav-link-hover', '#BDAE82')
         document.documentElement.style.setProperty('--sent-btn-text-color', '#000')
         document.documentElement.style.setProperty('--switch-lang-active', '#BDAE82')
-        document.documentElement.style.setProperty('--bg-head-tablet', 'url(./assets/img/tablet-head.jpg);--contacts-bg-tablet: url(./assets/img/tablet-contacts.jpg)')
+        document.documentElement.style.setProperty('--bg-head-tablet', 'url(./assets/img/tablet-head.jpg')
+        document.documentElement.style.setProperty('--contacts-bg-tablet', 'url(./assets/img/tablet-contacts.jpg)')
         document.documentElement.style.setProperty('--burger-link-color', '#BDAE82')
         document.documentElement.style.setProperty('--burger-link-color-hover', '#FFF')
         document.documentElement.style.setProperty('--theme-icon-hover', 'invert(14%) sepia(10%) saturate(1028%) hue-rotate(7deg) brightness(84%) contrast(77%)')

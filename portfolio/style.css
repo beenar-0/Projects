@@ -201,7 +201,7 @@ body {
 
 .navigation {
     display: flex;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .menu-icon {
@@ -732,7 +732,7 @@ a.nav-link:hover {
 .switch-theme {
     width: 45px;
     height: 45px;
-    margin: 0 25px 0 45px;
+    margin: 0 5px 0 35px;
     transition: 0.3s;
     cursor: pointer;
     background: url('./assets/svg/light_theme.svg') center no-repeat;
@@ -1091,6 +1091,13 @@ a.nav-link:hover {
         height: 28px;
         cursor: pointer;
         margin-left: 20px;
+        transition: 0.3s;
+    }
+
+    .menu-icon:hover {
+
+        filter: var(--filter);
+        cursor: pointer;
     }
 
     .menu-icon span,
@@ -1131,8 +1138,13 @@ a.nav-link:hover {
         background-color: var(--body-color);
         transition: all 0.3s ease 0s;
         transform: translate(100%, 0px);
-        padding: 134px 343px 461px 107px;
+        padding-top: 15vh;
+        padding-left: 15vw;
         overflow: hidden;
+    }
+
+    .switch-theme._hide {
+        display: none;
     }
 
     a.nav-link {
