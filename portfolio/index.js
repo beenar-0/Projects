@@ -199,22 +199,22 @@ function getTranslate(lang) {
 // Save and load from local storage
 
 function setLocalStorage() {
-    localStorage.setItem('theme', theme);
-    localStorage.setItem('lang', lang)
+    localStorage.setItem('Beenar-0_theme', theme);
+    localStorage.setItem('Beenar-0_lang', lang)
 }
 
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
-    if (localStorage.getItem('theme')) {
-        theme = localStorage.getItem('theme')
+    if (localStorage.getItem('Beenar-0_theme')) {
+        theme = localStorage.getItem('Beenar-0_theme')
         changeTheme(theme);
         if (theme === 'light') {
             switchThemeIcon.classList.toggle("_light")
         }
     }
-    if (localStorage.getItem('lang')) {
-        lang = localStorage.getItem('lang')
+    if (localStorage.getItem('Beenar-0_lang')) {
+        lang = localStorage.getItem('Beenar-0_lang')
         getTranslate(lang)
         if (lang === 'ru') {
             enButton.classList.toggle('_active')
