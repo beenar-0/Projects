@@ -98,6 +98,21 @@ h1, h2, h3, h4, h5, h6 {
     --contacts-bg-tablet: url(./assets/img/tablet-contacts.jpg);
 }
 
+
+/* -----animation of buttons----- */
+
+.pulse:hover,
+.pulse:focus {
+    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    animation: pulse 1s;
+}
+@keyframes pulse{
+    0%{box-shadow: 0 0 0 0 var(--gold-black)}
+}
+
+/*--------------------------------*/
+
+
 * {
     text-shadow: 0 0 1px var(--gold-black);
 }
@@ -535,7 +550,6 @@ h1 {
 
 .send-button__container {
     position: relative;
-    overflow: hidden;
     width: 220px;
     height: 55px;
 }
