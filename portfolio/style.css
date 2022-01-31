@@ -157,6 +157,7 @@ body {
     font-size: 20px;
     line-height: 50px;
     text-align: center;
+    width: max-content;
 }
 
 .slash {
@@ -699,7 +700,19 @@ a.nav-link:hover {
     }
 }
 
+@media (max-width: 855px) {
+
+    .logo-container {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
+
+    .logo-container {
+        display: block;
+    }
+
     .container {
         max-width: 768px;
     }
@@ -1206,5 +1219,16 @@ a.nav-link:hover {
 
     .contact-phone {
         width: 100%;
+    }
+
+    .hero__subtitle {
+        height: max-content;
+    }
+}
+
+@media (max-width: 345px) {
+
+    .logo-container {
+        display: none;
     }
 }
