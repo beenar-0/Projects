@@ -20,16 +20,16 @@
         <div class="nav-container">
             <nav class="menu__body">
                 <ul class="navigation menu__list">
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="#video" class="nav-link">Video</a></li>
-                    <li class="nav-item"><a href="#price" class="nav-link">Price</a></li>
-                    <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link" data-it18="skills">Skills</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-it18="portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a href="#video" class="nav-link" data-it18="video">Video</a></li>
+                    <li class="nav-item"><a href="#price" class="nav-link" data-it18="price">Price</a></li>
+                    <li class="nav-item"><a href="#contacts" class="nav-link" data-it18="contacts">Contacts</a></li>
                 </ul>
             </nav>
             <div class="switch-lng__container">
-                <span class="switch-lng en">EN</span>
-                <span class="switch-lng slash">/</span>
+                <span class="switch-lng en _active">EN</span>
+                <span class="slash">/</span>
                 <span class="switch-lng ru">RU</span>
             </div>
             <div class="switch-theme"></div>
@@ -43,14 +43,14 @@
     <div class="container">
         <section class="section hero__container">
             <div class="hero">
-                <h1>Alexa Rise</h1>
-                <p class="hero__subtitle">
+                <h1 data-it18="hero-title">Alexa Rise</h1>
+                <p class="hero__subtitle" data-it18="hero-text">
                     Save sincere emotions, romantic feelings and happy moments of life together with professional
                     photographer Alexa Rise
                 </p>
                 <div class="btn-link__container">
                     <a href="#contacts">
-                        <button class="hero-contact__btn">
+                        <button class="hero-contact__btn" data-it18="hire">
                             Hire me
                         </button>
                     </a>
@@ -59,40 +59,40 @@
         </section>
         <section class="section skills" id="skills">
             <div class="title__container">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title" data-it18="skills">Skills</h2>
             </div>
             <div class="skills-item__container">
                 <div class="skill-item">
                     <div class="skill-item__icon camera-icon"></div>
-                    <span class="item-title">Digital photography</span>
-                    <p class="item-subtitle">High-quality photos in the studio and on the nature</p>
+                    <span class="item-title" data-it18="skill-title-1">Digital photography</span>
+                    <p class="item-subtitle" data-it18="skill-text-1">High-quality photos in the studio and on the nature</p>
                 </div>
                 <div class="skill-item">
                     <div class="skill-item__icon video-icon"></div>
-                    <span class="item-title">Video shooting</span>
-                    <p class="item-subtitle">Capture your moments so that they always stay with you</p>
+                    <span class="item-title" data-it18="skill-title-2">Video shooting</span>
+                    <p class="item-subtitle" data-it18="skill-text-2">Capture your moments so that they always stay with you</p>
                 </div>
                 <div class="skill-item">
                     <div class="skill-item__icon img-icon"></div>
-                    <span class="item-title">Retouch</span>
-                    <p class="item-subtitle">I strive to make photography surpass reality</p>
+                    <span class="item-title" data-it18="skill-title-3">Retouch</span>
+                    <p class="item-subtitle" data-it18="skill-text-3">I strive to make photography surpass reality</p>
                 </div>
                 <div class="skill-item">
                     <div class="skill-item__icon micro-icon"></div>
-                    <span class="item-title">Audio</span>
-                    <p class="item-subtitle">Professional sounds recording for video, advertising, portfolio</p>
+                    <span class="item-title" data-it18="skill-title-4">Audio</span>
+                    <p class="item-subtitle" data-it18="skill-text-4">Professional sounds recording for video, advertising, portfolio</p>
                 </div>
             </div>
         </section>
         <section class="section portfolio" id="portfolio">
             <div class="title__container portfolio-title__container">
-                <h2 class="section-title portfolio-title">Portfolio</h2>
+                <h2 class="section-title portfolio-title" data-it18="portfolio">Portfolio</h2>
             </div>
             <div class="slider-btn__container">
-                <button class="slider-btn">Winter</button>
-                <button class="slider-btn">Spring</button>
-                <button class="slider-btn">Summer</button>
-                <button class="slider-btn _active-button">Autumn</button>
+                <button class="slider-btn" data-it18="winter">Winter</button>
+                <button class="slider-btn" data-it18="spring">Spring</button>
+                <button class="slider-btn" data-it18="summer">Summer</button>
+                <button class="slider-btn _active-button" data-it18="autumn">Autumn</button>
             </div>
             <div class="portfolio-items__container">
                 <img src="./assets/img/autumn/1.jpg" alt="item1" class="portfolio-item">
@@ -105,7 +105,7 @@
         </section>
         <section class="section video" id="video">
             <div class="title__container video-title__container">
-                <h2 class="section-title video-title">Video</h2>
+                <h2 class="section-title video-title" data-it18="video">Video</h2>
             </div>
             <div class="video-player__container">
                 <button class="play-button logo"></button>
@@ -113,22 +113,22 @@
         </section>
         <section class="section price" id="price">
             <div class="title__container price-title__container">
-                <h2 class="section-title price-title">Price</h2>
+                <h2 class="section-title price-title" data-it18="price">Price</h2>
             </div>
             <div class="price-item__container">
                 <div class="price-item">
                     <h3 class="price-item__title">Standard</h3>
                     <span class="price-item__price">500 $</span>
                     <ul class="price-item__option-list">
-                        <li class="price-item__option-list__option">One location</li>
-                        <li class="price-item__option-list__option">120 photos in color</li>
-                        <li class="price-item__option-list__option">12 photos in retouch</li>
-                        <li class="price-item__option-list__option">Readiness 2-3 weeks</li>
-                        <li class="price-item__option-list__option">Make up, visage</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-1-span-1">One location</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-1-span-2">120 photos in color</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-1-span-3">12 photos in retouch</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-1-span-4">Readiness 2-3 weeks</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-1-span-5">Make up, visage</li>
                     </ul>
                     <div class="btn-link__container btn price-btn__container">
                         <a href="#contacts">
-                            <button class="btn">Order shooting</button>
+                            <button class="btn" data-it18="order">Order shooting</button>
                         </a>
                     </div>
                 </div>
@@ -136,15 +136,15 @@
                     <h3 class="price-item__title">Premium</h3>
                     <span class="price-item__price">700 $</span>
                     <ul class="price-item__option-list">
-                        <li class="price-item__option-list__option">One or two locations</li>
-                        <li class="price-item__option-list__option">200 photos in color</li>
-                        <li class="price-item__option-list__option">20 photos in retouch</li>
-                        <li class="price-item__option-list__option">Readiness 1-2 weeks</li>
-                        <li class="price-item__option-list__option">Make up, visage</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-2-span-1">One or two locations</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-2-span-2">200 photos in color</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-2-span-3">20 photos in retouch</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-2-span-4">Readiness 1-2 weeks</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-2-span-5">Make up, visage</li>
                     </ul>
                     <div class="btn-link__container price-btn__container">
                         <a href="#contacts">
-                            <button class="btn">Order shooting</button>
+                            <button class="btn" data-it18="order">Order shooting</button>
                         </a>
                     </div>
                 </div>
@@ -152,15 +152,15 @@
                     <h3 class="price-item__title">Gold</h3>
                     <span class="price-item__price">1000 $</span>
                     <ul class="price-item__option-list">
-                        <li class="price-item__option-list__option">Three locations or more</li>
-                        <li class="price-item__option-list__option">300 photos in color</li>
-                        <li class="price-item__option-list__option">50 photos in retouch</li>
-                        <li class="price-item__option-list__option">Readiness 1 week</li>
-                        <li class="price-item__option-list__option">Make up, visage, hairstyle</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-3-span-1">Three locations or more</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-3-span-2">300 photos in color</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-3-span-3">50 photos in retouch</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-3-span-4">Readiness 1 week</li>
+                        <li class="price-item__option-list__option" data-it18="price-description-3-span-5">Make up, visage, hairstyle</li>
                     </ul>
                     <div class="btn-link__container price-btn__container">
                         <a href="#contacts">
-                            <button class="btn">Order shooting</button>
+                            <button class="btn" data-it18="order">Order shooting</button>
                         </a>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
         </section>
         <section class="section contacts" id="contacts">
             <div class="contact__container">
-                <h2 class="contact-title">Contact me</h2>
+                <h2 class="contact-title" data-it18="contact-me">Contact me</h2>
                 <form action="#">
                     <div class="form-item">
                         <label>
@@ -185,8 +185,8 @@
                             <textarea name="message" class="contact-message" placeholder="Message"></textarea>
                         </label>
                         <div class="send-button__container">
-                            <div class="sent">Sent!</div>
-                            <button type="reset" class="hero-contact__btn send-button">Send message</button>
+                            <div class="sent" data-it18="sent">Sent!</div>
+                            <button type="reset" class="hero-contact__btn send-button" data-it18="send-message">Send message</button>
                         </div>
                     </div>
                 </form>
@@ -212,6 +212,6 @@
         </ul>
     </div>
 </footer>
-<script src="./index.js"></script>
+<script src="./index.js" type="module"></script>
 </body>
 </html>
