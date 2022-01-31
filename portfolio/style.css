@@ -98,6 +98,9 @@ h1, h2, h3, h4, h5, h6 {
     --contacts-bg-tablet: url(./assets/img/tablet-contacts.jpg);
 }
 
+* {
+    text-shadow: 0 0 1px var(--gold-black);
+}
 
 html {
     scroll-behavior: smooth;
