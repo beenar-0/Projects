@@ -98,6 +98,9 @@ h1, h2, h3, h4, h5, h6 {
     --contacts-bg-tablet: url(./assets/img/tablet-contacts.jpg);
 }
 
+* {
+    text-shadow: 0 0 1px var(--gold-black);
+}
 
 html {
     scroll-behavior: smooth;
@@ -158,6 +161,7 @@ body {
     line-height: 50px;
     text-align: center;
     width: max-content;
+    white-space: nowrap;
 }
 
 .slash {
@@ -693,6 +697,16 @@ a.nav-link:hover {
     background: var(--contact-bg);
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-black);
+    border-radius: 5px;
+    width: 8px;
+}
+
 @media (max-width: 1440px) {
 
     .skills-item__container {
@@ -705,9 +719,32 @@ a.nav-link:hover {
     .logo-container {
         display: none;
     }
+
+    .nav-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .switch-lng__container {
+        margin-left: auto;
+    }
+
+    .switch-theme {
+        margin-left: 20px;
+    }
+
 }
 
 @media (max-width: 768px) {
+
+    .nav-container {
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .switch-lng__container {
+        margin-left: 0;
+    }
 
     .logo-container {
         display: block;
@@ -939,7 +976,6 @@ a.nav-link:hover {
         font-weight: normal;
         font-size: 20px;
         line-height: 40px;
-        color: var(--gold);
     }
 
     .contact-message {
@@ -950,7 +986,6 @@ a.nav-link:hover {
         font-weight: normal;
         font-size: 20px;
         line-height: 40px;
-        color: var(--gold);
     }
 
     .form-item input,
