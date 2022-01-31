@@ -163,10 +163,6 @@ body {
     margin: 0 5px;
 }
 
-.en {
-    color: var(--gold-white);
-}
-
 .hero__container {
     background: var(--bg-head) center -90px no-repeat;
     background-size: auto;
@@ -659,13 +655,18 @@ a.nav-link:hover {
     cursor: pointer;
 }
 
-.ru {
+.switch-lng{
     transition: 0.3s;
+    color: var(--white-black);
+    cursor: pointer;
 }
 
-.ru:hover {
-    filter: var(--filter);
-    cursor: pointer;
+.switch-lng:hover {
+    color: var(--gold-white);
+}
+
+.switch-lng._active{
+    color: var(--gold-white);
 }
 
 .switch-theme {

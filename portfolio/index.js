@@ -59,27 +59,6 @@ function changeTheme(theme) {
 }
 
 
-// Save and load from local storage
-
-function setLocalStorage() {
-    localStorage.setItem('theme', theme);
-}
-
-window.addEventListener('beforeunload', setLocalStorage)
-
-function getLocalStorage() {
-    if (localStorage.getItem('theme')) {
-        theme = localStorage.getItem('theme');
-        changeTheme(theme);
-        if (theme === 'light') {
-            switchThemeIcon.classList.toggle("_light")
-        }
-    }
-}
-
-window.addEventListener('load', getLocalStorage)
-
-
 // Changing portfolio images
 
 const portfolioItems = document.querySelectorAll(".portfolio-item")
@@ -173,3 +152,74 @@ menuLinks.forEach((link) => {
 })
 
 
+// Translate
+import i18Obj from "./translate.js";
+
+let lang
+const ruButton = document.querySelector('.ru')
+const enButton = document.querySelector('.en')
+
+
+enButton.addEventListener('click', () => {
+    if (ruButton.classList.contains('_active')) {
+        enButton.classList.toggle('_active')
+        ruButton.classList.toggle('_active')
+        lang = 'en'
+        console.log(lang)
+        getTranslate(lang)
+    }
+})
+
+ruButton.addEventListener('click', () => {
+    if (enButton.classList.contains('_active')) {
+        ruButton.classList.toggle('_active')
+        enButton.classList.toggle('_active')
+        lang = 'ru'
+        console.log(lang)
+        getTranslate(lang)
+    }
+})
+
+
+function getTranslate(lang) {
+    const pageText = document.querySelectorAll('[data-it18]')
+    if (lang === 'ru') {
+        pageText.forEach((currentElement) => {
+            currentElement.textContent = `${i18Obj["ru"][currentElement.dataset.it18]}`
+        })
+    } else if (lang === 'en') {
+        pageText.forEach((currentElement) => {
+            currentElement.textContent = `${i18Obj["en"][currentElement.dataset.it18]}`
+        })
+    }
+}
+
+
+// Save and load from local storage
+
+function setLocalStorage() {
+    localStorage.setItem('theme', theme);
+    localStorage.setItem('lang', lang)
+}
+
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+    if (localStorage.getItem('theme')) {
+        theme = localStorage.getItem('theme')
+        changeTheme(theme);
+        if (theme === 'light') {
+            switchThemeIcon.classList.toggle("_light")
+        }
+    }
+    if (localStorage.getItem('lang')) {
+        lang = localStorage.getItem('lang')
+        getTranslate(lang)
+        if (lang === 'ru') {
+            enButton.classList.toggle('_active')
+            ruButton.classList.toggle('_active')
+        }
+    }
+}
+
+window.addEventListener('load', getLocalStorage)
