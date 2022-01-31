@@ -38,7 +38,10 @@ const i18Obj = {
         'order': 'Order shooting',
         'contact-me': 'Contact me',
         'send-message': 'Send message',
-        'sent': 'Sent!'
+        'sent': 'Sent!',
+        'price-type-standard': 'Standard',
+        'price-type-gold': 'Gold',
+        'price-type-premium': 'Premium'
     },
     'ru': {
         'skills': 'Навыки',
@@ -79,7 +82,10 @@ const i18Obj = {
         'order': 'Заказать съемку',
         'contact-me': 'Свяжитесь со мной',
         'send-message': 'Отправить',
-        'sent': 'Отправлено!'
+        'sent': 'Отправлено!',
+        'price-type-standard': 'Стандарт',
+        'price-type-gold': 'Золото',
+        'price-type-premium': 'Премиум'
     }
 }
 export default i18Obj;
