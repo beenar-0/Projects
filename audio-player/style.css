@@ -1,0 +1,96 @@
+body {
+    background: rgba(242, 201, 76, 1);
+}
+
+.container {
+    width: 540px;
+    height: 600px;
+    margin: 10vh auto 10vh;
+}
+
+.player-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: #26282C;
+    box-shadow: 0 8px 40px rgba(242, 153, 74, 0.4);
+    border-radius: 32px;
+    position: relative;
+}
+
+.player-head {
+    width: 100%;
+    height: 56px;
+    background: linear-gradient(180deg, rgba(38, 40, 44, 0) 0%, #4E4F55 100%);
+    border-radius: 0 0 32px 32px;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.player-bottom {
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    height: 56px;
+    background: linear-gradient(180deg, rgba(57, 58, 64, 0) 0%, #000000 100%);
+    opacity: 0.9;
+    border-radius: 0 0 32px 32px;
+}
+
+.player-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    margin: 0 auto;
+    width: 480px;
+    height: 510px;
+}
+
+.screen__container {
+    width: 100%;
+    height: 350px;
+    background: #26282C;
+    box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.4);
+    border-radius: 24px;
+}
+
+.screen-body {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: 11px;
+    background: linear-gradient(0deg, #17181A 0%, #34353E 100%);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.buttons__container {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 125px;
+    background: #26282C;
+    box-shadow: inset 1px 2px 90px rgba(0, 0, 0, 0.4);
+    border-radius: 24px 24px 0 0;
+}
+
+.button {
+    width: 112px;
+    height: 110px;
+    background: #393A40;
+    box-shadow: inset -4px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.buttons__container div:first-child{
+    border-radius: 16px 0 0 0;
+}
+
+.buttons__container div:last-child{
+    border-radius: 0 16px 0 0;
+}
+
+
