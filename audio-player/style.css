@@ -1,5 +1,6 @@
 body {
-    background: url("./assets/img/bg.jpg");
+    background: url("./assets/img/bg.jpg") no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -69,7 +70,7 @@ body {
 }
 
 .screen-body.cover {
-    background: url("./assets/img/pump-it1.jpg") no-repeat;
+    background: url("./assets/img/wgtm1.jpg") no-repeat;
     background-size: contain;
 }
 
@@ -173,7 +174,8 @@ body {
     width: 76px;
     background: url("./assets/svg/wheel.svg") no-repeat;
     background-size: contain;
-
+    animation: rotate 2s linear infinite;
+    animation-play-state: paused;
 }
 
 .pit__container {
@@ -226,7 +228,7 @@ body {
     background: linear-gradient(180deg, #26282C 0%, rgba(57,58,64,1) 60%, rgba(0,0,0,0.6250875350140056) 100%);
 }
 
-.button:active {
+.pl._active {
     background: linear-gradient(180deg, #26282C 0%, #26282C 60%, rgba(0,0,0,0.6250875350140056) 100%);
 }
 
@@ -274,6 +276,23 @@ body {
     filter: invert(68%) sepia(5%) saturate(254%) hue-rotate(187deg) brightness(98%) contrast(95%);
 }
 
+.btn-logo._active {
+    filter: invert(68%) sepia(5%) saturate(254%) hue-rotate(187deg) brightness(98%) contrast(95%);
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.wheel._active {
+    /*animation: rotate 0.5s linear infinite;*/
+    animation-play-state: running;
+}
 
 
 
