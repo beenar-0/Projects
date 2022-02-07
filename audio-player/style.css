@@ -1,11 +1,11 @@
 body {
-    background: rgba(242, 201, 76, 1);
+    background: url("./assets/img/bg.jpg");
 }
 
 .container {
     width: 540px;
-    height: 600px;
-    margin: 10vh auto 10vh;
+    height: 930px;
+    margin: 3vh auto 3vh;
 }
 
 .player-body {
@@ -15,18 +15,22 @@ body {
     width: 100%;
     height: 100%;
     background: #26282C;
-    box-shadow: 0 8px 40px rgba(242, 153, 74, 0.4);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
     border-radius: 32px;
     position: relative;
 }
 
 .player-head {
+    z-index: 999;
+    position: relative;
     width: 100%;
     height: 56px;
     background: linear-gradient(180deg, rgba(38, 40, 44, 0) 0%, #4E4F55 100%);
     border-radius: 0 0 32px 32px;
     transform: matrix(1, 0, 0, -1, 0, 0);
 }
+
+
 
 .player-bottom {
     position: relative;
@@ -41,13 +45,15 @@ body {
 .player-main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
     position: absolute;
     bottom: 0;
     left: 30px;
     margin: 0 auto;
     width: 480px;
-    height: 510px;
+    height: 900px;
 }
 
 .screen__container {
@@ -57,6 +63,16 @@ body {
     box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.4);
     border-radius: 24px;
 }
+
+.screen__container.cover {
+    width: 350px;
+}
+
+.screen-body.cover {
+    background: url("./assets/img/pump-it1.jpg") no-repeat;
+    background-size: contain;
+}
+
 
 .screen-body {
     display: flex;
