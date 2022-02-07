@@ -6,6 +6,8 @@ const nextBtn = document.querySelector('.next-btn')
 const wheels = document.querySelectorAll('.wheel')
 const playWrapper = document.querySelector('.pl')
 const cover = document.querySelector('.screen-body.cover')
+const songName = document.querySelector('.song')
+const bandName = document.querySelector('.band')
 let playNum = 0
 const songs = [
     {
@@ -28,6 +30,7 @@ const songs = [
     }
 ]
 const audio = new Audio()
+
 
 // play/pause
 playBtn.addEventListener('click', clickSound)
@@ -53,11 +56,6 @@ function btnClick() {
 
 }
 
-function clickSound() {
-    audio.src = './assets/music/btn.mp3'
-    audio.play()
-}
-
 function playAudio() {
     audio.src = songs[playNum]["link"];
     audio.play();
@@ -66,6 +64,14 @@ function playAudio() {
 function pauseAudio() {
     audio.pause()
 }
+
+
+// buttons click sound
+function clickSound() {
+    audio.src = './assets/music/btn.mp3'
+    audio.play()
+}
+
 
 // stop
 stopBtn.addEventListener("click", stopSound)
@@ -83,13 +89,19 @@ function stopSound() {
 }
 
 //change cover
-
 function changeCover() {
     cover.style.backgroundImage = `url(${songs[playNum]['cover']})`
 }
 
 
-// next+prev
+// change song name
+function changeSong() {
+    songName.innerText = songs[playNum]["name"]
+    bandName.innerText = songs[playNum]["band"]
+}
+
+
+// next btn
 nextBtn.addEventListener('click', playNext)
 
 function playNext() {
@@ -101,11 +113,28 @@ function playNext() {
     } else {
         playNum += 1
     }
-changeCover()
+    stopSound()
+    changeCover()
+    changeSong()
 }
 
+
+// prev btn
+prevBtn.addEventListener('click', playPrev)
+
 function playPrev() {
-    playNum -= 1
+    clickSound()
+    if (playNum === 0) {
+        playNum = songs.length - 1
+    } else if (playNum === songs.length - 1) {
+        playNum = 0
+    } else {
+        playNum -= 1
+    }
+    console.log(playNum)
+    stopSound()
+    changeCover()
+    changeSong()
 }
 
 

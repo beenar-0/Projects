@@ -132,14 +132,19 @@ body {
 
 .cassette__title {
     font-family: Caveat Brush, serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 40px;
+    line-height: 33px;
     text-align: center;
     letter-spacing: 0.01em;
     color: rgba(184, 184, 185, 0.5);
-    margin-bottom: 27px;
+    height: 33px;
+}
+
+.cassette__title.song{
+    font-size: 20px;
+}
+
+.cassette__title.band{
+    font-size: 15px;
 }
 
 .cassette__inner {
