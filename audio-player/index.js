@@ -5,6 +5,7 @@ const stopBtn = document.querySelector('.stop-btn')
 const nextBtn = document.querySelector('.next-btn')
 const wheels = document.querySelectorAll('.wheel')
 const playWrapper = document.querySelector('.pl')
+const cover = document.querySelector('.screen-body.cover')
 let playNum = 0
 const songs = [
     {
@@ -25,7 +26,7 @@ const songs = [
         'band': 'Eskimo callboy',
         'cover': './assets/img/pump-it.jpg'
     }
-    ]
+]
 const audio = new Audio()
 
 // play/pause
@@ -35,7 +36,7 @@ playBtn.addEventListener('click', btnClick)
 function btnClick() {
     if (isPlay === false) {
         isPlay = true
-        wheels.forEach((item)=>{
+        wheels.forEach((item) => {
             item.classList.add('_active')
         })
         playWrapper.classList.add('_active')
@@ -43,7 +44,7 @@ function btnClick() {
         setTimeout(playAudio, 400)
     } else {
         isPlay = false
-        wheels.forEach((item)=>{
+        wheels.forEach((item) => {
             item.classList.remove('_active')
         })
         playWrapper.classList.remove('_active')
@@ -58,12 +59,12 @@ function clickSound() {
 }
 
 function playAudio() {
-        audio.src = songs[playNum]["link"];
-        audio.play();
+    audio.src = songs[playNum]["link"];
+    audio.play();
 }
 
 function pauseAudio() {
-       audio.pause()
+    audio.pause()
 }
 
 // stop
@@ -73,7 +74,7 @@ function stopSound() {
     isPlay = false
     audio.pause()
     audio.currentTime = 0
-    wheels.forEach((item)=>{
+    wheels.forEach((item) => {
         item.classList.remove('_active')
     })
     playWrapper.classList.remove('_active')
@@ -81,11 +82,26 @@ function stopSound() {
     clickSound()
 }
 
+//change cover
+
+function changeCover() {
+    cover.style.backgroundImage = `url(${songs[playNum]['cover']})`
+}
+
 
 // next+prev
+nextBtn.addEventListener('click', playNext)
 
 function playNext() {
-    playNum += 1
+    clickSound()
+    if (playNum < 0) {
+        playNum = songs.length - 1
+    } else if (playNum === songs.length - 1) {
+        playNum = 0
+    } else {
+        playNum += 1
+    }
+changeCover()
 }
 
 function playPrev() {
