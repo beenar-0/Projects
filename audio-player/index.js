@@ -5,6 +5,27 @@ const stopBtn = document.querySelector('.stop-btn')
 const nextBtn = document.querySelector('.next-btn')
 const wheels = document.querySelectorAll('.wheel')
 const playWrapper = document.querySelector('.pl')
+let playNum = 0
+const songs = [
+    {
+        'link': './assets/music/wgtm.mp3',
+        'name': 'We got the moves',
+        'band': 'Eskimo callboy',
+        'cover': './assets/img/wgtm.jpg'
+    },
+    {
+        'link': './assets/music/hypa.mp3',
+        'name': 'Hypa Hypa',
+        'band': 'Eskimo callboy',
+        'cover': './assets/img/hypa.jpg'
+    },
+    {
+        'link': './assets/music/pump-it.mp3',
+        'name': 'Pump it',
+        'band': 'Eskimo callboy',
+        'cover': './assets/img/pump-it.jpg'
+    }
+    ]
 const audio = new Audio()
 
 // play/pause
@@ -37,7 +58,7 @@ function clickSound() {
 }
 
 function playAudio() {
-        audio.src = './assets/music/wgtm.mp3';
+        audio.src = songs[playNum]["link"];
         audio.play();
 }
 
@@ -61,6 +82,14 @@ function stopSound() {
 }
 
 
-//
+// next+prev
+
+function playNext() {
+    playNum += 1
+}
+
+function playPrev() {
+    playNum -= 1
+}
 
 
