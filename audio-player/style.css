@@ -228,7 +228,11 @@ body {
     background: linear-gradient(180deg, #26282C 0%, rgba(57,58,64,1) 60%, rgba(0,0,0,0.6250875350140056) 100%);
 }
 
-.pl._active {
+.button._active {
+    background: linear-gradient(180deg, #26282C 0%, #26282C 60%, rgba(0,0,0,0.6250875350140056) 100%);
+}
+
+.button:active {
     background: linear-gradient(180deg, #26282C 0%, #26282C 60%, rgba(0,0,0,0.6250875350140056) 100%);
 }
 

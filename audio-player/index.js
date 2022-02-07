@@ -5,29 +5,23 @@ const stopBtn = document.querySelector('.stop-btn')
 const nextBtn = document.querySelector('.next-btn')
 const wheels = document.querySelectorAll('.wheel')
 const playWrapper = document.querySelector('.pl')
-const prevWrapper = document.querySelector('.pr')
-const stopWrapper = document.querySelector('.st')
-const nextWrapper = document.querySelector('.n')
 const audio = new Audio()
 
 // play/pause
-playBtn.addEventListener('click', playAudio)
+playBtn.addEventListener('click', clickSound)
+playBtn.addEventListener('click', btnClick)
 
-function playAudio() {
+function btnClick() {
     if (isPlay === false) {
-        audio.src = './assets/music/hypa.mp3';
-        audio.play();
         isPlay = true
-        console.log('play')
         wheels.forEach((item)=>{
             item.classList.add('_active')
         })
         playWrapper.classList.add('_active')
         playBtn.classList.add('_active')
+        setTimeout(playAudio, 400)
     } else {
-        audio.pause()
         isPlay = false
-        console.log('pause')
         wheels.forEach((item)=>{
             item.classList.remove('_active')
         })
@@ -36,13 +30,20 @@ function playAudio() {
     }
 
 }
-// buttons.forEach((item)=>{
-//     item.addEventListener('click', ()=>{
-//         event.target.classList.add('FFF')
-//         console.log(event.target)
-//     })
-// })
 
+function clickSound() {
+    audio.src = './assets/music/btn.mp3'
+    audio.play()
+}
+
+function playAudio() {
+        audio.src = './assets/music/wgtm.mp3';
+        audio.play();
+}
+
+function pauseAudio() {
+       audio.pause()
+}
 
 // stop
 stopBtn.addEventListener("click", stopSound)
@@ -56,12 +57,10 @@ function stopSound() {
     })
     playWrapper.classList.remove('_active')
     playBtn.classList.remove('_active')
+    clickSound()
 }
 
 
 //
-function clickSound() {
-    audio.src = './assets/music/btn.mp3'
-    audio.play()
-}
+
 
