@@ -323,13 +323,12 @@ body {
     color: rgba(184, 184, 185, 0.5);
 }
 
-
-
 .footer__container {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
+    min-width: 540px;
     height: 90px;
     background: #26282C;
     opacity: 0.3;
@@ -362,6 +361,16 @@ a {
 
 .wheel._active {
     animation-play-state: running;
+}
+
+body {
+    min-height: 930px;
+}
+
+@media (max-width: 420px) {
+    body {
+        background: rgba(0, 0, 0, 0.95);
+    }
 }
 
 
