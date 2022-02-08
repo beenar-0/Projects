@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     position: absolute;
     bottom: 0;
     left: 30px;
@@ -219,6 +219,7 @@ body {
 }
 
 .button {
+    cursor: pointer;
     z-index: 99999;
     display: flex;
     justify-content: center;
@@ -287,6 +288,38 @@ body {
 
 .btn-logo._active {
     filter: invert(68%) sepia(5%) saturate(254%) hue-rotate(187deg) brightness(98%) contrast(95%);
+}
+
+.progress-bar {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: rgb(0 0 0 / 40%);
+    width: 400px;
+    height: 15px;
+    border-radius: 10px;
+}
+
+.current-progress {
+    margin-left: 5px;
+    background: rgba(184, 184, 185, 1);
+    width: 200px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+.progress-bar__container {
+    display: flex;
+    align-items: center;
+}
+
+.time {
+    margin: 0 10px;
+    font-family: Caveat Brush, serif;
+    line-height: 10px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: rgba(184, 184, 185, 0.5);
 }
 
 @keyframes rotate {

@@ -68,13 +68,6 @@ function pauseAudio() {
 }
 
 
-// buttons click sound
-// function clickSound() {
-//     // audio.src = './assets/music/btn.mp3'
-//     clickSound.play()
-// }
-
-
 // stop
 stopBtn.addEventListener("click", stopSound)
 
