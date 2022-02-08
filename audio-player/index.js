@@ -29,7 +29,7 @@ const songs = [
         'cover': './assets/img/pump-it.jpg'
     }
 ]
-const audio = new Audio()
+let audio = new Audio(songs[playNum]["link"])
 const clickSound = new Audio('./assets/music/btn.mp3')
 
 
@@ -47,6 +47,7 @@ function btnClick() {
         playBtn.classList.add('_active')
         setTimeout(playAudio, 400)
     } else {
+        audio.pause()
         isPlay = false
         wheels.forEach((item) => {
             item.classList.remove('_active')
@@ -58,8 +59,8 @@ function btnClick() {
 }
 
 function playAudio() {
-    audio.src = songs[playNum]["link"];
-    audio.play();
+    // audio.src = songs[playNum]["link"]
+    audio.play()
 }
 
 function pauseAudio() {
@@ -107,11 +108,14 @@ nextBtn.addEventListener('click', playNext)
 
 function playNext() {
     clickSound.play()
+
     if  (playNum === songs.length - 1) {
         playNum = 0
     } else {
         playNum += 1
     }
+    audio.src = songs[playNum]["link"]
+    console.log(playNum)
     stopSound()
     changeCover()
     changeSong()
@@ -123,11 +127,13 @@ prevBtn.addEventListener('click', playPrev)
 
 function playPrev() {
     clickSound.play()
+
     if (playNum === 0) {
         playNum = songs.length - 1
     }  else {
         playNum -= 1
     }
+    audio.src = songs[playNum]["link"]
     console.log(playNum)
     stopSound()
     changeCover()
