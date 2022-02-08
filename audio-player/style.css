@@ -342,8 +342,13 @@ body {
     font-weight: 700;
 }
 
-.link:hover {
+.link a:hover {
     color: rgba(184, 184, 185, 0.5);
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 @keyframes rotate {
