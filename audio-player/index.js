@@ -8,6 +8,9 @@ const playWrapper = document.querySelector('.pl')
 const cover = document.querySelector('.screen-body.cover')
 const songName = document.querySelector('.song')
 const bandName = document.querySelector('.band')
+const currentProgress = document.querySelector(".current-progress")
+const timeline = document.querySelector(".progress-bar")
+const songDuration = document.querySelector('.max-time')
 let playNum = 0
 const songs = [
     {
@@ -33,6 +36,8 @@ let audio = new Audio(songs[playNum]["link"])
 const clickSound = new Audio('./assets/music/btn.mp3')
 
 
+audio.addEventListener('loadeddata', getAudioDuration)
+
 // play/pause
 playBtn.addEventListener('click', btnClick)
 
@@ -55,7 +60,6 @@ function btnClick() {
         playWrapper.classList.remove('_active')
         playBtn.classList.remove('_active')
     }
-
 }
 
 function playAudio() {
@@ -72,6 +76,7 @@ function pauseAudio() {
 stopBtn.addEventListener("click", stopSound)
 
 function stopSound() {
+    currentProgress.style.width = 0
     isPlay = false
     audio.pause()
     audio.currentTime = 0
@@ -101,7 +106,7 @@ nextBtn.addEventListener('click', playNext)
 
 function playNext() {
     clickSound.play()
-
+    currentProgress.style.width = 0
     if  (playNum === songs.length - 1) {
         playNum = 0
     } else {
@@ -120,7 +125,7 @@ prevBtn.addEventListener('click', playPrev)
 
 function playPrev() {
     clickSound.play()
-
+    currentProgress.style.width = 0
     if (playNum === 0) {
         playNum = songs.length - 1
     }  else {
@@ -131,6 +136,42 @@ function playPrev() {
     stopSound()
     changeCover()
     changeSong()
+}
+
+// progress bar
+
+function getAudioDuration() {
+    songDuration.textContent = getTime(audio.duration)
+}
+
+window.addEventListener('load', getAudioDuration)
+
+//click on timeline to change current time
+
+timeline.addEventListener("click", e => {
+    const progressWidth = window.getComputedStyle(timeline).width
+    const currentTime = e.offsetX / parseInt(progressWidth) * audio.duration
+    console.log(currentTime)
+    audio.currentTime = currentTime
+});
+
+//update progress
+setInterval(() => {
+    currentProgress.style.width = (audio.currentTime / audio.duration * 100) + "%"
+    document.querySelector(".current-time").textContent = getTime(
+        audio.currentTime
+    )
+    if (audio.currentTime === audio.duration) {playNext()}
+}, 100);
+
+// set time to normal value
+function getTime(num) {
+    let sec = parseInt(num)
+    let min = parseInt(sec / 60)
+    sec -= min * 60
+    const hours = parseInt(min / 60)
+    min -= hours * 60
+    if (hours === 0) return `${min  }:${String(sec % 60).padStart(2, 0)}`
 }
 
 

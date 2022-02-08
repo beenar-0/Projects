@@ -291,6 +291,7 @@ body {
 }
 
 .progress-bar {
+    padding: 0 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -301,20 +302,20 @@ body {
 }
 
 .current-progress {
-    margin-left: 5px;
     background: rgba(184, 184, 185, 1);
-    width: 200px;
-    height: 5px;
+    height: 6px;
     border-radius: 10px;
 }
 
 .progress-bar__container {
+    width: 480px;
+    justify-content: space-between;
     display: flex;
     align-items: center;
 }
 
 .time {
-    margin: 0 10px;
+    width: 30px;
     font-family: Caveat Brush, serif;
     line-height: 10px;
     text-align: center;
@@ -332,7 +333,6 @@ body {
 }
 
 .wheel._active {
-    /*animation: rotate 0.5s linear infinite;*/
     animation-play-state: running;
 }
 
