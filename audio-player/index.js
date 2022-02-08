@@ -30,13 +30,14 @@ const songs = [
     }
 ]
 const audio = new Audio()
+const clickSound = new Audio('./assets/music/btn.mp3')
 
 
 // play/pause
-playBtn.addEventListener('click', clickSound)
 playBtn.addEventListener('click', btnClick)
 
 function btnClick() {
+    clickSound.play()
     if (isPlay === false) {
         isPlay = true
         wheels.forEach((item) => {
@@ -67,10 +68,10 @@ function pauseAudio() {
 
 
 // buttons click sound
-function clickSound() {
-    audio.src = './assets/music/btn.mp3'
-    audio.play()
-}
+// function clickSound() {
+//     // audio.src = './assets/music/btn.mp3'
+//     clickSound.play()
+// }
 
 
 // stop
@@ -85,7 +86,7 @@ function stopSound() {
     })
     playWrapper.classList.remove('_active')
     playBtn.classList.remove('_active')
-    clickSound()
+    clickSound.play()
 }
 
 //change cover
@@ -105,10 +106,8 @@ function changeSong() {
 nextBtn.addEventListener('click', playNext)
 
 function playNext() {
-    clickSound()
-    if (playNum < 0) {
-        playNum = songs.length - 1
-    } else if (playNum === songs.length - 1) {
+    clickSound.play()
+    if  (playNum === songs.length - 1) {
         playNum = 0
     } else {
         playNum += 1
@@ -123,12 +122,10 @@ function playNext() {
 prevBtn.addEventListener('click', playPrev)
 
 function playPrev() {
-    clickSound()
+    clickSound.play()
     if (playNum === 0) {
         playNum = songs.length - 1
-    } else if (playNum === songs.length - 1) {
-        playNum = 0
-    } else {
+    }  else {
         playNum -= 1
     }
     console.log(playNum)
