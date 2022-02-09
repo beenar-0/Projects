@@ -35,8 +35,9 @@ const songs = [
 let audio = new Audio(songs[playNum]["link"])
 const clickSound = new Audio('./assets/music/btn.mp3')
 
-
 audio.addEventListener('loadeddata', getAudioDuration)
+
+
 
 // play/pause
 playBtn.addEventListener('click', btnClick)
@@ -148,9 +149,9 @@ window.addEventListener('load', getAudioDuration)
 
 //click on timeline to change current time
 
-timeline.addEventListener("click", e => {
+timeline.addEventListener("click", x => {
     const progressWidth = window.getComputedStyle(timeline).width
-    const currentTime = e.offsetX / parseInt(progressWidth) * audio.duration
+    const currentTime = x.offsetX / parseInt(progressWidth) * audio.duration
     console.log(currentTime)
     audio.currentTime = currentTime
 });
@@ -174,4 +175,22 @@ function getTime(num) {
     if (hours === 0) return `${min  }:${String(sec % 60).padStart(2, 0)}`
 }
 
+//volume
+audio.volume = 0.5
+const currentVolume = document.querySelector(".current-volume")
+currentVolume.style.height = '50%'
+
+const volumeBar = document.querySelector(".volume-bar")
+volumeBar.addEventListener('click', y => {
+    const barHeight = window.getComputedStyle(volumeBar).height
+    const newVolume = y.offsetY / parseInt(barHeight)
+    audio.volume = newVolume
+    currentVolume.style.height = newVolume * 100 + '%'
+}, false)
+
+const volumeButton = document.querySelector(".volume-icon")
+volumeButton.addEventListener("click", () => {
+    audio.muted = !audio.muted
+    volumeButton.classList.toggle('muted')
+});
 
