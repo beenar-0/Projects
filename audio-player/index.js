@@ -133,9 +133,9 @@ function playPrev() {
     }
     audio.src = songs[playNum]["link"]
     console.log(playNum)
-    stopSound()
     changeCover()
     changeSong()
+    audio.play()
 }
 
 // progress bar
