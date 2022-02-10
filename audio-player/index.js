@@ -51,7 +51,7 @@ function btnClick() {
         })
         playWrapper.classList.add('_active')
         playBtn.classList.add('_active')
-        setTimeout(playAudio, 400)
+        setTimeout(playAudio, 200)
     } else {
         audio.pause()
         isPlay = false
@@ -64,12 +64,7 @@ function btnClick() {
 }
 
 function playAudio() {
-    // audio.src = songs[playNum]["link"]
     audio.play()
-}
-
-function pauseAudio() {
-    audio.pause()
 }
 
 
@@ -101,12 +96,16 @@ function changeSong() {
     bandName.innerText = songs[playNum]["band"]
 }
 
+// click sound
+function buttonClicked(){
+    clickSound.play()
+}
 
 // next btn
 nextBtn.addEventListener('click', playNext)
+nextBtn.addEventListener('click', buttonClicked)
 
 function playNext() {
-    clickSound.play()
     currentProgress.style.width = 0
     if  (playNum === songs.length - 1) {
         playNum = 0
@@ -115,7 +114,7 @@ function playNext() {
     }
     audio.src = songs[playNum]["link"]
     console.log(playNum)
-    stopSound()
+    audio.play()
     changeCover()
     changeSong()
 }
