@@ -1,0 +1,269 @@
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    width: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*--------------------*/
+
+body {
+    width: 100%;
+    height: 100%;
+    background: #121829;
+    background-size: cover;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    background: url("./assets/svg/background.svg") no-repeat fixed;
+    background-size: cover;
+}
+
+a.link {
+    text-decoration: none;
+    font-family: Poppins, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #A8AEBF;
+}
+
+.footer__container {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.links__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 440px;
+}
+
+.link:hover {
+    color: white;
+
+}
+
+.rs-logo__container {
+    background: url("./assets/svg/logo-rs.svg") 50% 50% no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+}
+
+h1 {
+    margin: 80px auto 60px;
+    font-family: Poppins, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    color: #EBEEF5;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search__container {
+    width: 755px;
+    height: 60px;
+}
+
+.search {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #323B54;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-family: Poppins, serif;
+    font-size: 24px;
+    line-height: 16px;
+    color: white;
+    padding-left: 20px;
+    padding-bottom: 3px;
+    opacity: 0.5;
+}
+
+.search::placeholder {
+    font-family: Poppins, serif;
+    font-size: 18px;
+    line-height: 16px;
+    color: #475069;
+}
+
+form {
+    height: 100%;
+}
+
+.movies__container {
+    gap: 25px;
+    max-width: 1200px;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movies-item {
+    position: relative;
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 8px 8px 0;
+    width: 285px;
+    height: 480px;
+    background: rgba(32, 40, 62, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+    overflow-y: hidden;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+}
+
+.overview {
+    left: 0;
+    top: 0;
+    right: 0;
+    max-height: 100%;
+    padding: 10%;
+    transform: translateY(-101%);
+    position: absolute;
+    overflow-y: auto;
+    transition: 0.5s;
+    opacity: 0.9;
+    font-family: Poppins, serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+
+}
+
+.movies-item:hover .overview {
+    background: white;
+    transform: translateY(0);
+}
+
+.movie-cover {
+    margin-bottom: 15px;
+    width: 265px;
+    height: 400px;
+
+    background-size: contain;
+    border-radius: 8px;
+
+}
+
+.info__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.movie-title {
+    margin: 8px 8px 8px 8px;
+    font-family: Poppins, serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #EBEEF5;
+}
+
+.movie-score {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    height: 100%;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-right: 15px;
+     font-family: Poppins, serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFAD49;
+}
