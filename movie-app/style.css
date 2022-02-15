@@ -72,21 +72,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     width: 100%;
-    height: 100%;
     background: #121829;
     background-size: cover;
 }
 
 .wrapper {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     background: url("./assets/svg/background.svg") no-repeat fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
+main {
+    flex: 1 auto;
+}
+
+.link,
 a.link {
+    cursor: pointer;
     margin: 0 15px;
     text-decoration: none;
     font-family: Poppins, serif;
@@ -99,6 +111,7 @@ a.link {
     min-width: max-content;
 }
 
+
 .footer__container {
     background: rgba(0, 0, 0, 0.2);
     padding: 10px 20px;
@@ -110,7 +123,6 @@ a.link {
     width: 100%;
     margin-top: 100px;
 }
-
 
 
 .links__container {
@@ -151,9 +163,25 @@ h1 {
 }
 
 .search__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     width: 60%;
     max-width: 100%;
     height: 60px;
+}
+
+.search-icon {
+    background: url("./assets/svg/search.svg") 50% no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin-right: -50px;
+    z-index: 999;
+}
+
+.form {
+    flex-grow: 1;
 }
 
 .search {
@@ -167,16 +195,22 @@ h1 {
     font-size: 24px;
     line-height: 16px;
     color: white;
-    padding-left: 20px;
-    padding-bottom: 3px;
+    padding: 0 20px 3px 60px;
     opacity: 0.5;
+}
+
+.input-text::-webkit-search-cancel-button {
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    cursor: pointer;
 }
 
 .search::placeholder {
     font-family: Poppins, serif;
     font-size: 18px;
     line-height: 16px;
-    color: #475069;
+    color: #3a455e
 }
 
 form {
@@ -238,7 +272,7 @@ form {
 }
 
 ::-webkit-scrollbar-thumb {
-    background:#323B54;
+    background: #323B54;
     border-radius: 5px;
     width: 8px;
 }
@@ -251,7 +285,7 @@ form {
     border-radius: 8px;
     font-family: Poppins, serif;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 40px;
     letter-spacing: 0.02em;
 
@@ -286,14 +320,14 @@ form {
     padding: 4px 8px;
     border-radius: 8px;
     margin-right: 15px;
-     font-family: Poppins, serif;
+    font-family: Poppins, serif;
     font-size: 16px;
     line-height: 24px;
     color: #FFAD49;
 }
 
 @media (max-width: 450px) {
-    .footer__container{
+    .footer__container {
         height: 150px;
         flex-direction: column;
     }
