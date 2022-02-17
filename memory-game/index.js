@@ -15,32 +15,47 @@ const soundMinus = document.querySelector('.sound-minus')
 const soundToggleIcon = document.querySelector('.toggle-sound-icon')
 const soundBtn = document.querySelector('.sound-btn')
 const menuSound = document.querySelector('.menu-sound')
+const buttons = document.querySelectorAll('.menu-item')
+const buttonsSound = new Audio('./assets/sounds/btn.mp3')
 
+buttonsSound.volume = 0.1
 mainSound.volume = 0.1
 duckSound.volume = 0.1
 
+buttons.forEach((item)=>{
+    item.addEventListener('click', ()=>{
+        buttonsSound.play()
+    })
+
+})
+
+
 const wrapper = document.querySelector('.wrapper')
-wrapper.addEventListener('click', ()=>{
+wrapper.addEventListener('click', () => {
     mainSound.play()
-    mainSound.onended = () => {mainSound.play()}
+    mainSound.onended = () => {
+        mainSound.play()
+    }
 })
 
 
-soundPlus.addEventListener('click', ()=>{
+soundPlus.addEventListener('click', () => {
     if ((mainSound.volume + 0.1) < 1) mainSound.volume = mainSound.volume + 0.1
-    if (mainSound.volume > 0) soundToggleIcon.classList.remove('muted')
+    if (mainSound.volume > 0) {
+        soundToggleIcon.classList.remove('muted')
+        mainSound.muted = false
+    }
 })
 
-soundMinus.addEventListener('click', ()=>{
+soundMinus.addEventListener('click', () => {
     if ((mainSound.volume - 0.1) <= 0) {
         mainSound.volume = 0
         soundToggleIcon.classList.add('muted')
-    }
-    else mainSound.volume = mainSound.volume - 0.1
-    if (mainSound.volume < 0.01 ) soundToggleIcon.classList.add('muted')
+    } else mainSound.volume = mainSound.volume - 0.1
+    if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
 
-soundToggle.addEventListener('click', ()=>{
+soundToggle.addEventListener('click', () => {
     mainSound.muted = !mainSound.muted
     soundToggleIcon.classList.toggle('muted')
 })
@@ -53,35 +68,35 @@ startBtn.addEventListener('click', () => {
     }, 300)
 })
 
-duckBtn.forEach((item)=>{
-    item.addEventListener('click', ()=>{
+duckBtn.forEach((item) => {
+    item.addEventListener('click', () => {
         duckSound.play()
     })
 })
 
-aboutBtn.addEventListener('click', ()=>{
+aboutBtn.addEventListener('click', () => {
     setTimeout(() => {
         menu.classList.toggle('_active')
         menuAbout.classList.toggle('_active')
     }, 300)
 })
 
-soundBtn.addEventListener('click', ()=>{
+soundBtn.addEventListener('click', () => {
     setTimeout(() => {
         menu.classList.toggle('_active')
         menuSound.classList.toggle('_active')
     }, 300)
 })
 
-scoreBtn.addEventListener('click', ()=>{
+scoreBtn.addEventListener('click', () => {
     setTimeout(() => {
         menu.classList.toggle('_active')
         menuScore.classList.toggle('_active')
     }, 300)
 })
 
-backBtn.forEach((item)=>{
-    item.addEventListener('click', ()=>{
+backBtn.forEach((item) => {
+    item.addEventListener('click', () => {
         setTimeout(() => {
             menu.classList.toggle('_active')
             menuAbout.classList.remove('_active')
