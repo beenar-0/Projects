@@ -2,15 +2,15 @@ const menu = document.querySelector('.menu')
 
 
 
-// const buttons = document.querySelectorAll('.menu-item')
-// const buttonsSound = new Audio('./assets/sounds/btn.mp3')
-// buttonsSound.volume = 0.1
-// buttons.forEach((item)=>{
-// //     item.addEventListener('click', ()=>{
-// //         buttonsSound.play()
-// //     })
-// //
-// // })
+const buttons = document.querySelectorAll('.menu-item')
+const buttonsSound = new Audio('./assets/sounds/button.mp3')
+buttonsSound.volume = 0.3
+buttons.forEach((item)=>{
+    item.addEventListener('click', ()=>{
+        buttonsSound.play()
+    })
+
+})
 
 
 // preload
@@ -31,6 +31,8 @@ winSound.volume = 0.1
 
 scoreCard.addEventListener('click', () => {
     setTimeout(() => {
+        mainSound.pause()
+        mainSound.currentTime = 0
         menuWin.classList.toggle('_active')
         cardContainer.classList.toggle('_active')
         winSound.play()
@@ -44,8 +46,8 @@ const cardContainer = document.querySelector('.cards__container')
 
 startBtn.addEventListener('click', () => {
     setTimeout(() => {
-        menu.classList.toggle('_active')
-        cardContainer.classList.toggle('_active')
+        menu.classList.add('_active')
+        cardContainer.classList.add('_active')
     }, 300)
 })
 
@@ -71,12 +73,17 @@ const soundMinus = document.querySelector('.sound-minus')
 const soundToggleIcon = document.querySelector('.toggle-sound-icon')
 const soundBtn = document.querySelector('.sound-btn')
 const menuSound = document.querySelector('.menu-sound')
+let isMainSoundPlay = false
 
 mainSound.volume = 0.1
 duckSound.volume = 0.1
 
 wrapper.addEventListener('click', () => {
-    mainSound.play()
+    if (!isMainSoundPlay) {
+        mainSound.play()
+        isMainSoundPlay = true
+    }
+
     mainSound.onended = () => {
         mainSound.play()
     }
@@ -94,23 +101,32 @@ soundBtn.addEventListener('click', () => {
 
 soundToggle.addEventListener('click', () => {
     mainSound.muted = !mainSound.muted
+    winSound.muted = !winSound.muted
     soundToggleIcon.classList.toggle('muted')
 })
 
 
 soundPlus.addEventListener('click', () => {
-    if ((mainSound.volume + 0.1) < 1) mainSound.volume = mainSound.volume + 0.1
+    if ((mainSound.volume + 0.1) < 1) {
+        mainSound.volume = mainSound.volume + 0.1
+        winSound.volume = winSound.volume + 0.1
+    }
     if (mainSound.volume > 0) {
         soundToggleIcon.classList.remove('muted')
         mainSound.muted = false
+        winSound.muted = false
     }
 })
 
 soundMinus.addEventListener('click', () => {
     if ((mainSound.volume - 0.1) <= 0) {
         mainSound.volume = 0
+        winSound.volume = 0
         soundToggleIcon.classList.add('muted')
-    } else mainSound.volume = mainSound.volume - 0.1
+    } else {
+        mainSound.volume = mainSound.volume - 0.1
+        winSound.volume = winSound.volume - 0.1
+    }
     if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
 
@@ -153,7 +169,8 @@ const backBtn = document.querySelectorAll('.back-btn')
 backBtn.forEach((item) => {
     item.addEventListener('click', () => {
         setTimeout(() => {
-            menu.classList.toggle('_active')
+            if (menuWin.classList.contains('_active')) mainSound.play()
+            menu.classList.remove('_active')
             menuAbout.classList.remove('_active')
             menuScore.classList.remove('_active')
             cardContainer.classList.remove('_active')
