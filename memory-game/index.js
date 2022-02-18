@@ -15,19 +15,26 @@ const soundMinus = document.querySelector('.sound-minus')
 const soundToggleIcon = document.querySelector('.toggle-sound-icon')
 const soundBtn = document.querySelector('.sound-btn')
 const menuSound = document.querySelector('.menu-sound')
-const buttons = document.querySelectorAll('.menu-item')
-const buttonsSound = new Audio('./assets/sounds/btn.mp3')
-
-buttonsSound.volume = 0.1
-mainSound.volume = 0.1
+const yearBtn = document.querySelector('.year-btn')
+// const buttons = document.querySelectorAll('.menu-item')
+// const buttonsSound = new Audio('./assets/sounds/btn.mp3')
+// buttonsSound.volume = 0.1
+mainSound.volume = 0.05
 duckSound.volume = 0.1
 
-buttons.forEach((item)=>{
-    item.addEventListener('click', ()=>{
-        buttonsSound.play()
-    })
 
+yearBtn.addEventListener('click', ()=>{
+    document.querySelector('.troglodyte').classList.add('_active')
+    setTimeout(()=>{
+        document.querySelector('.troglodyte').classList.remove('_active')
+    },5000)
 })
+// buttons.forEach((item)=>{
+//     item.addEventListener('click', ()=>{
+//         buttonsSound.play()
+//     })
+//
+// })
 
 
 const wrapper = document.querySelector('.wrapper')
@@ -40,7 +47,7 @@ wrapper.addEventListener('click', () => {
 
 
 soundPlus.addEventListener('click', () => {
-    if ((mainSound.volume + 0.1) < 1) mainSound.volume = mainSound.volume + 0.1
+    if ((mainSound.volume + 0.05) < 1) mainSound.volume = mainSound.volume + 0.05
     if (mainSound.volume > 0) {
         soundToggleIcon.classList.remove('muted')
         mainSound.muted = false
@@ -48,10 +55,10 @@ soundPlus.addEventListener('click', () => {
 })
 
 soundMinus.addEventListener('click', () => {
-    if ((mainSound.volume - 0.1) <= 0) {
+    if ((mainSound.volume - 0.05) <= 0) {
         mainSound.volume = 0
         soundToggleIcon.classList.add('muted')
-    } else mainSound.volume = mainSound.volume - 0.1
+    } else mainSound.volume = mainSound.volume - 0.05
     if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
 

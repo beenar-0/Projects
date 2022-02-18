@@ -69,8 +69,8 @@ body {
 .card {
     cursor: pointer;
     height: 160px;
-    width: 144px;
-    background: url("./assets/img/cards/cover2.png");
+    width: 160px;
+    background: url("./assets/img/cards/necro.png") no-repeat;
     background-size: contain;
 }
 
@@ -301,3 +301,24 @@ body {
 * {
     cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;
 }
+
+.year-btn {
+    overflow: hidden;
+}
+
+.troglodyte {
+    position: absolute;
+    background: url("./assets/img/troglodyte.gif") no-repeat;
+    background-size: contain;
+    width: 98px;
+    height: 64px;
+    transform: translateX(-100%);
+    transition: 1s;
+}
+
+.troglodyte._active{
+    transform: translateX(0);
+}
+
+
+
