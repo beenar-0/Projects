@@ -1,11 +1,42 @@
 const menu = document.querySelector('.menu')
+
+
+
+// const buttons = document.querySelectorAll('.menu-item')
+// const buttonsSound = new Audio('./assets/sounds/btn.mp3')
+// buttonsSound.volume = 0.1
+// buttons.forEach((item)=>{
+// //     item.addEventListener('click', ()=>{
+// //         buttonsSound.play()
+// //     })
+// //
+// // })
+
+
+//  game
 const startBtn = document.querySelector('.new-game-btn')
-const aboutBtn = document.querySelector('.about-btn')
 const cardContainer = document.querySelector('.cards__container')
-const menuAbout = document.querySelector('.menu-about')
-const backBtn = document.querySelectorAll('.back-btn')
-const scoreBtn = document.querySelector('.score-btn')
-const menuScore = document.querySelector('.menu-score')
+
+startBtn.addEventListener('click', () => {
+    setTimeout(() => {
+        menu.classList.toggle('_active')
+        cardContainer.classList.toggle('_active')
+    }, 300)
+})
+
+
+// troglodyte
+const yearBtn = document.querySelector('.year-btn')
+yearBtn.addEventListener('click', ()=>{
+    document.querySelector('.troglodyte').classList.add('_active')
+    setTimeout(()=>{
+        document.querySelector('.troglodyte').classList.remove('_active')
+    },5000)
+})
+
+
+// main music
+const wrapper = document.querySelector('.wrapper')
 const duckBtn = document.querySelectorAll('.duck')
 const duckSound = new Audio('./assets/sounds/duck-sound.mp3')
 const mainSound = new Audio('./assets/sounds/menu.mp3')
@@ -15,34 +46,30 @@ const soundMinus = document.querySelector('.sound-minus')
 const soundToggleIcon = document.querySelector('.toggle-sound-icon')
 const soundBtn = document.querySelector('.sound-btn')
 const menuSound = document.querySelector('.menu-sound')
-const yearBtn = document.querySelector('.year-btn')
-// const buttons = document.querySelectorAll('.menu-item')
-// const buttonsSound = new Audio('./assets/sounds/btn.mp3')
-// buttonsSound.volume = 0.1
+
 mainSound.volume = 0.05
 duckSound.volume = 0.1
 
-
-yearBtn.addEventListener('click', ()=>{
-    document.querySelector('.troglodyte').classList.add('_active')
-    setTimeout(()=>{
-        document.querySelector('.troglodyte').classList.remove('_active')
-    },5000)
-})
-// buttons.forEach((item)=>{
-//     item.addEventListener('click', ()=>{
-//         buttonsSound.play()
-//     })
-//
-// })
-
-
-const wrapper = document.querySelector('.wrapper')
 wrapper.addEventListener('click', () => {
     mainSound.play()
     mainSound.onended = () => {
         mainSound.play()
     }
+})
+
+
+// menu-music
+soundBtn.addEventListener('click', () => {
+    setTimeout(() => {
+        menu.classList.toggle('_active')
+        menuSound.classList.toggle('_active')
+    }, 300)
+})
+
+
+soundToggle.addEventListener('click', () => {
+    mainSound.muted = !mainSound.muted
+    soundToggleIcon.classList.toggle('muted')
 })
 
 
@@ -62,24 +89,18 @@ soundMinus.addEventListener('click', () => {
     if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
 
-soundToggle.addEventListener('click', () => {
-    mainSound.muted = !mainSound.muted
-    soundToggleIcon.classList.toggle('muted')
-})
 
-
-startBtn.addEventListener('click', () => {
-    setTimeout(() => {
-        menu.classList.toggle('_active')
-        cardContainer.classList.toggle('_active')
-    }, 300)
-})
 
 duckBtn.forEach((item) => {
     item.addEventListener('click', () => {
         duckSound.play()
     })
 })
+
+
+// about-menu
+const aboutBtn = document.querySelector('.about-btn')
+const menuAbout = document.querySelector('.menu-about')
 
 aboutBtn.addEventListener('click', () => {
     setTimeout(() => {
@@ -88,12 +109,10 @@ aboutBtn.addEventListener('click', () => {
     }, 300)
 })
 
-soundBtn.addEventListener('click', () => {
-    setTimeout(() => {
-        menu.classList.toggle('_active')
-        menuSound.classList.toggle('_active')
-    }, 300)
-})
+
+// score-menu
+const scoreBtn = document.querySelector('.score-btn')
+const menuScore = document.querySelector('.menu-score')
 
 scoreBtn.addEventListener('click', () => {
     setTimeout(() => {
@@ -101,6 +120,10 @@ scoreBtn.addEventListener('click', () => {
         menuScore.classList.toggle('_active')
     }, 300)
 })
+
+
+// return to main menu
+const backBtn = document.querySelectorAll('.back-btn')
 
 backBtn.forEach((item) => {
     item.addEventListener('click', () => {
