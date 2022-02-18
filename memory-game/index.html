@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
     <title>Memory game</title>
     <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <link rel="stylesheet" href="style.css">
@@ -17,18 +17,24 @@
     <main class="main">
         <div class="container main__container">
             <div class="cards__container">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                <div class="score-table">
+                    <span class="time-title">Time: <span class="time">00:00</span></span>
+                    <span class="steps-title">Steps: <span class="steps">00</span></span>
+                </div>
+                <div class="cards__wrapper">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
                 <div class="menu-item back-btn">Back to menu</div>
             </div>
             <div class="menu main-menu">
@@ -42,8 +48,12 @@
             <div class="menu menu-about">
                 <ul class="menu__list">
                     <li class="menu-item"><a href="https://github.com/beenar-0" target="_blank">GitHub</a></li>
-                    <li class="menu-item"><a href="https://rs.school/js-stage0/" target="_blank">Rolling scopes school</a></li>
-                    <li class="menu-item year-btn"><div class="troglodyte"></div>2022</li>
+                    <li class="menu-item"><a href="https://rs.school/js-stage0/" target="_blank">Rolling scopes
+                        school</a></li>
+                    <li class="menu-item year-btn">
+                        <div class="troglodyte"></div>
+                        2022
+                    </li>
                     <li class="menu-item back-btn">Back to menu</li>
                 </ul>
             </div>
@@ -72,6 +82,16 @@
                     <li class="duck"><span class="duck3 animated-duck"></span></li>
                     <li class="menu-item back-btn">Back to menu</li>
                 </ul>
+            </div>
+            <div class="menu menu-win">
+                <div class="win-gif__container">
+                    <div class="win-gif"></div>
+                </div>
+                <div class="win-text__container">
+                    <span class="win-text">A glorious victory!</span>
+                    <span class="win-text">For valor in combat, you receive <span class="score-count">0</span> points</span>
+                </div>
+                <div class="menu-item back-btn win-btn">Back to menu</div>
             </div>
         </div>
     </main>

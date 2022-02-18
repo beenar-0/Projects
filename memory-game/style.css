@@ -21,40 +21,63 @@ body {
 
 .header {
     background: rgba(0, 0, 0, 0.5);
-    height: 50px;
     width: 100%;
 }
 
 .main {
     width: 100%;
+    min-height: 800px;
+    height: 1px;
     flex: 1 1 auto;
     display: flex;
 }
 
 .footer {
     width: 100%;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.5);
 }
 
 .main__container {
-    height: 870px;
-    flex-grow: 1;
+    min-height: 700px;
+    height: 100%;
     display: flex;
+    flex-basis: 100%;
     flex-direction: column;
     align-items: center;
-    overflow-y: hidden;
+    justify-content: space-around;
     position: relative;
+    overflow-y: hidden;
+}
+
+.score-table {
+    padding: 0 20px 10px ;
+    font-size: 30px;
+    color: #f1e9af;
+    line-height: 35px;
+    text-align: center;
+    width: 420px;
+    height: 128px;
+    background: url("./assets/img/small plate.png") no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+    transform: scale(1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.score-table:active {
+    transform: scale(0.97);
 }
 
 .cards__container {
-    margin: 30px auto;
-    padding: 30px;
+    margin: 0 auto;
+    padding: 20px;
     max-width: 800px;
     height: max-content;
-    gap: 30px;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
     transition: 1s;
     display: flex;
@@ -66,15 +89,33 @@ body {
     top: 0;
 }
 
+.cards__wrapper {
+    margin: 10px auto;
+    max-width: 700px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    transition: 1s;
+    display: flex;
+}
+
 .card {
     cursor: pointer;
-    height: 160px;
-    width: 160px;
-    background: url("./assets/img/cards/necro.png") no-repeat;
+    height: 135px;
+    width: 120px;
+    background: url("./assets/img/cards/cover2.png") no-repeat;
     background-size: contain;
+    transition: 0.3s;
+    transform: scale(1);
+}
+
+.card:active {
+    transform: scale(0.97);
 }
 
 .menu {
+    margin: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,7 +126,6 @@ body {
     height: 600px;
     background: url("./assets/img/menu.png") no-repeat;
     background-size: contain;
-    margin: 30px;
     transition: 1s;
 }
 
@@ -115,18 +155,7 @@ body {
 }
 
 .menu-about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 70px;
-    position: absolute;
     top: -1000px;
-    width: 600px;
-    height: 600px;
-    background: url("./assets/img/menu.png") no-repeat;
-    background-size: contain;
-    margin: 30px;
-    transition: 1s;
 }
 
 .menu-about._active {
@@ -152,15 +181,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 70px;
-    position: absolute;
     top: -1000px;
-    width: 600px;
-    height: 600px;
-    background: url("./assets/img/menu.png") no-repeat;
-    background-size: contain;
-    margin: 30px;
-    transition: 1s;
 }
 
 .menu-score._active {
@@ -175,18 +196,7 @@ body {
 }
 
 .menu-sound {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 70px;
-    position: absolute;
     top: -1000px;
-    width: 600px;
-    height: 600px;
-    background: url("./assets/img/menu.png") no-repeat;
-    background-size: contain;
-    margin: 30px;
-    transition: 1s;
 }
 
 .menu-sound._active {
@@ -263,7 +273,7 @@ body {
     transform: scale(0.90);
 }
 
-.music__list li:nth-child(4){
+.music__list li:nth-child(4) {
     margin-left: 30px;
 }
 
@@ -284,16 +294,17 @@ body {
 }
 
 .duck1 {
-    background-image: url("./assets/img/utka.gif");
+    background-image: url("./assets/img/gif1.gif");
 }
 
 .duck2 {
-    background-image: url("./assets/img/utka2.gif");
+    background-image: url("./assets/img/gif2.gif");
 }
 
 .duck3 {
-    background-image: url("./assets/img/utka3.gif");
+    background-image: url("./assets/img/gif3.gif");
 }
+
 * {
     cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo29.cur), auto !important;
 }
@@ -308,7 +319,7 @@ body {
 
 .troglodyte {
     position: absolute;
-    background: url("./assets/img/troglodyte.gif") no-repeat;
+    background: url("./assets/img/gif0.gif") no-repeat;
     background-size: contain;
     width: 98px;
     height: 64px;
@@ -316,9 +327,57 @@ body {
     transition: 1s;
 }
 
-.troglodyte._active{
+.troglodyte._active {
     transform: translateX(0);
 }
+
+.menu-win {
+    top: -1000px;
+}
+
+.menu-win._active {
+    top: 0;
+}
+
+.win-text__container {
+    background: url("./assets/img/menu-item2.png");
+    background-size: cover;
+    width: 450px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px black;
+    transition: 0.3s;
+    transform: scale(1);
+}
+
+.win-text__container:active{
+    transform: scale(0.97);
+}
+
+.win-gif {
+    background: url("./assets/img/gif4.gif");
+    width: 420px;
+    height: 200px;
+    background-size: cover;
+    border: 1px solid #f1e9af;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.win-text {
+    display: block;
+    margin: 10px 0;
+    color: #f1e9af;
+    font-size: 17px;
+}
+
+.win-btn {
+    margin: 20px;
+}
+
 
 
 

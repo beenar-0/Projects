@@ -13,6 +13,31 @@ const menu = document.querySelector('.menu')
 // // })
 
 
+// preload
+function preloadImages(){
+    for(let i = 1; i < 4; i++) {
+        const img = new Image();
+        img.src = `./assets/img/gif${i}.gif`;
+    }
+}
+preloadImages()
+
+
+// win
+const menuWin = document.querySelector('.menu-win')
+const scoreCard = document.querySelector('.score-table')
+const winSound = new Audio('./assets/sounds/win sound.mp3')
+winSound.volume = 0.1
+
+scoreCard.addEventListener('click', () => {
+    setTimeout(() => {
+        menuWin.classList.toggle('_active')
+        cardContainer.classList.toggle('_active')
+        winSound.play()
+    }, 300)
+})
+
+
 //  game
 const startBtn = document.querySelector('.new-game-btn')
 const cardContainer = document.querySelector('.cards__container')
@@ -47,7 +72,7 @@ const soundToggleIcon = document.querySelector('.toggle-sound-icon')
 const soundBtn = document.querySelector('.sound-btn')
 const menuSound = document.querySelector('.menu-sound')
 
-mainSound.volume = 0.05
+mainSound.volume = 0.1
 duckSound.volume = 0.1
 
 wrapper.addEventListener('click', () => {
@@ -74,7 +99,7 @@ soundToggle.addEventListener('click', () => {
 
 
 soundPlus.addEventListener('click', () => {
-    if ((mainSound.volume + 0.05) < 1) mainSound.volume = mainSound.volume + 0.05
+    if ((mainSound.volume + 0.1) < 1) mainSound.volume = mainSound.volume + 0.1
     if (mainSound.volume > 0) {
         soundToggleIcon.classList.remove('muted')
         mainSound.muted = false
@@ -82,10 +107,10 @@ soundPlus.addEventListener('click', () => {
 })
 
 soundMinus.addEventListener('click', () => {
-    if ((mainSound.volume - 0.05) <= 0) {
+    if ((mainSound.volume - 0.1) <= 0) {
         mainSound.volume = 0
         soundToggleIcon.classList.add('muted')
-    } else mainSound.volume = mainSound.volume - 0.05
+    } else mainSound.volume = mainSound.volume - 0.1
     if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
 
@@ -133,6 +158,7 @@ backBtn.forEach((item) => {
             menuScore.classList.remove('_active')
             cardContainer.classList.remove('_active')
             menuSound.classList.remove('_active')
+            menuWin.classList.remove('_active')
         }, 300)
     })
 })
