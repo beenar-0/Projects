@@ -49,14 +49,14 @@ body {
 }
 
 .score-table {
-    padding: 0 20px 10px ;
-    font-size: 30px;
+    padding: 0 20px;
+    font-size: 35px;
     color: #f1e9af;
     line-height: 35px;
     text-align: center;
-    width: 420px;
-    height: 128px;
-    background: url("./assets/img/small plate.png") no-repeat;
+    width: 484px;
+    height: 110px;
+    background: url("./assets/img/small plate2.png") no-repeat;
     background-size: contain;
     transition: 0.3s;
     transform: scale(1);
@@ -64,6 +64,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 5px 5px 5px black;
 }
 
 .score-table:active {
@@ -102,12 +103,13 @@ body {
 
 .card {
     cursor: pointer;
-    height: 135px;
-    width: 120px;
-    background: url("./assets/img/cards/cover2.png") no-repeat;
-    background-size: contain;
+    height: 125px;
+    width: 125px;
+    background: url("./assets/img/cards/cover.jpg") no-repeat;
+    background-size: cover;
     transition: 0.3s;
     transform: scale(1);
+    box-shadow: 5px 5px 5px black;
 }
 
 .card:active {
@@ -340,7 +342,7 @@ body {
 }
 
 .win-text__container {
-    background: url("./assets/img/menu-item2.png");
+    background: url("./assets/img/test.jpg");
     background-size: cover;
     width: 450px;
     height: 120px;
@@ -348,13 +350,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 5px 5px black;
-    transition: 0.3s;
-    transform: scale(1);
-}
-
-.win-text__container:active{
-    transform: scale(0.97);
+    border: 1px solid #f1e9af;
 }
 
 .win-gif {
@@ -371,7 +367,7 @@ body {
     display: block;
     margin: 10px 0;
     color: #f1e9af;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .win-btn {
