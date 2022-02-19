@@ -1,12 +1,22 @@
 const menu = document.querySelector('.menu')
 
 
+// flip cards
+const cards = document.querySelectorAll('.card')
 
+cards.forEach((item)=>{
+    item.addEventListener('click', ()=>{
+        item.classList.toggle('_flip')
+    })
+})
+
+
+// buttons sound
 const buttons = document.querySelectorAll('.menu-item')
 const buttonsSound = new Audio('./assets/sounds/button.mp3')
 buttonsSound.volume = 0.3
-buttons.forEach((item)=>{
-    item.addEventListener('click', ()=>{
+buttons.forEach((item) => {
+    item.addEventListener('click', () => {
         buttonsSound.play()
     })
 
@@ -14,12 +24,13 @@ buttons.forEach((item)=>{
 
 
 // preload
-function preloadImages(){
-    for(let i = 1; i < 4; i++) {
+function preloadImages() {
+    for (let i = 1; i < 4; i++) {
         const img = new Image();
         img.src = `./assets/img/gif${i}.gif`;
     }
 }
+
 preloadImages()
 
 
@@ -54,11 +65,11 @@ startBtn.addEventListener('click', () => {
 
 // troglodyte
 const yearBtn = document.querySelector('.year-btn')
-yearBtn.addEventListener('click', ()=>{
+yearBtn.addEventListener('click', () => {
     document.querySelector('.troglodyte').classList.add('_active')
-    setTimeout(()=>{
+    setTimeout(() => {
         document.querySelector('.troglodyte').classList.remove('_active')
-    },5000)
+    }, 5000)
 })
 
 
@@ -129,7 +140,6 @@ soundMinus.addEventListener('click', () => {
     }
     if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
-
 
 
 duckBtn.forEach((item) => {
