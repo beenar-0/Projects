@@ -342,7 +342,7 @@ body {
 }
 
 .win-text__container {
-    background: url("./assets/img/test.jpg");
+    background: url("./assets/img/test.png");
     background-size: cover;
     width: 450px;
     height: 120px;
@@ -351,6 +351,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid #f1e9af;
+    border-radius: 3px;
 }
 
 .win-gif {
@@ -371,7 +372,7 @@ body {
 }
 
 .win-btn {
-    margin: 20px;
+    margin: 40px 0 0 0;
 }
 
 
