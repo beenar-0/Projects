@@ -1,14 +1,100 @@
 const menu = document.querySelector('.menu')
+const menuWin = document.querySelector('.menu-win')
+const battleSound = new Audio("./assets/sounds/fights")
+const winSound = new Audio('./assets/sounds/win sound.mp3')
+winSound.volume = 0.1
 
 
-// flip cards
+// game logic
 const cards = document.querySelectorAll('.card')
+const stepsTable = document.querySelector('.steps')
+let gameEnd = 0
+let stepsCount = 0
+let isFlipped = false
+let firstCard, secondCard
+let lock = false
 
-cards.forEach((item)=>{
-    item.addEventListener('click', ()=>{
-        item.classList.toggle('_flip')
-    })
+cards.forEach((item) => {
+    item.addEventListener('click', flipCard)
 })
+
+function flipCard() {
+    if (lock) return
+    this.classList.add('_flip')
+    if (!isFlipped) {
+        isFlipped = true
+        firstCard = this
+    } else {
+        if (this === firstCard) return;
+        secondCard = this
+        isFlipped = false
+        stepsCount += 1
+        stepsTable.innerText = stepsCount.toString().padStart(2, '0')
+        checkMatch()
+    }
+}
+
+function checkMatch() {
+    if (firstCard.dataset.card === secondCard.dataset.card) {
+        gameEnd += 1
+        if (gameEnd === 9) {
+            setTimeout(() => {
+                mainSound.pause()
+                mainSound.currentTime = 0
+                menuWin.classList.toggle('_active')
+                cardContainer.classList.toggle('_active')
+                winSound.play()
+            }, 1000)
+        }
+        disable()
+    } else {
+        unflipCards()
+    }
+}
+
+function disable() {
+    firstCard.removeEventListener('click', flipCard)
+    secondCard.removeEventListener('click', flipCard)
+    lock = false
+    isFlipped = false
+    firstCard = null
+    secondCard = null
+}
+
+function unflipCards() {
+    lock = true
+    setTimeout(() => {
+        firstCard.classList.remove('_flip')
+        secondCard.classList.remove('_flip')
+        isFlipped = false
+        firstCard = null
+        secondCard = null
+        lock = false
+
+    }, 1300)
+}
+
+
+// shuffle cards
+function shuffleCards() {
+    let randomOrder = new Set
+    let temp = []
+    while (randomOrder.size < 18) {
+        randomOrder.add(random())
+    }
+    randomOrder.forEach((item) => {
+        temp.push(item)
+    })
+    cards.forEach((item, index) => {
+        item.style.order = temp[index]
+    })
+}
+
+shuffleCards()
+
+function random() {
+    return Math.ceil(Math.random() * 18)
+}
 
 
 // buttons sound
@@ -32,23 +118,6 @@ function preloadImages() {
 }
 
 preloadImages()
-
-
-// win
-const menuWin = document.querySelector('.menu-win')
-const scoreCard = document.querySelector('.score-table')
-const winSound = new Audio('./assets/sounds/win sound.mp3')
-winSound.volume = 0.1
-
-scoreCard.addEventListener('click', () => {
-    setTimeout(() => {
-        mainSound.pause()
-        mainSound.currentTime = 0
-        menuWin.classList.toggle('_active')
-        cardContainer.classList.toggle('_active')
-        winSound.play()
-    }, 300)
-})
 
 
 //  game
