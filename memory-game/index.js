@@ -63,18 +63,6 @@ function recordResult(timer, steps) {
     temp = {}
 }
 
-
-// placeholder to win
-const scoreTable = document.querySelector('.score-table')
-scoreTable.addEventListener('click', () => {
-    mainSound.pause()
-    mainSound.currentTime = 0
-    menuWin.classList.toggle('_active')
-    cardContainer.classList.toggle('_active')
-    resetBoard()
-    winSound.play()
-})
-
 // game logic
 const score = document.querySelector('.score-count')
 const cards = document.querySelectorAll('.card')
@@ -231,47 +219,10 @@ preloadImages()
 
 const wrapper = document.querySelector('.wrapper')
 const loadIcon = document.querySelector('.load-icon')
-// let haveLoadedBefore = false
 
-// if (!localStorage.getItem('haveLoadedBefore')) {
-//     setTimeout(()=>{
-//         wrapper.classList.remove('_loading')
-//         loadIcon.classList.remove('_loading')
-//         wrapper.addEventListener('click', () => {
-//             if (!isMainSoundPlay) {
-//                 mainSound.play()
-//                 isMainSoundPlay = true
-//             }
-//
-//             mainSound.onended = () => {
-//                 mainSound.play()
-//
-//             }
-//         })
-//         haveLoadedBefore = true
-//         localStorage.setItem('haveLoadedBefore', haveLoadedBefore)
-//     }, 20000)
-// } else {
-//     setTimeout(()=>{
-//         wrapper.classList.remove('_loading')
-//         loadIcon.classList.remove('_loading')
-//         wrapper.addEventListener('click', () => {
-//             if (!isMainSoundPlay) {
-//                 mainSound.play()
-//                 isMainSoundPlay = true
-//             }
-//
-//             mainSound.onended = () => {
-//                 mainSound.play()
-//
-//             }
-//         })
-//     }, 2000)
-// }
 
 
 window.addEventListener('load', () => {
-    setTimeout(()=>{
         wrapper.classList.remove('_loading')
         loadIcon.classList.remove('_loading')
         wrapper.addEventListener('click', () => {
@@ -285,7 +236,6 @@ window.addEventListener('load', () => {
 
             }
         })
-    },15000)
 
 })
 
