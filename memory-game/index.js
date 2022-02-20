@@ -354,3 +354,40 @@ backBtn.forEach((item) => {
     })
 })
 
+// dragons egg
+const egg = document.querySelector('.egg')
+const dragon1 = document.querySelector('.duck')
+const dragon2 = document.querySelector('.duck2')
+const dragon3 = document.querySelector('.duck3')
+
+dragon1.addEventListener('click', ()=>{
+    dragon1Counter = true
+    eggCheck()
+})
+
+dragon2.addEventListener('click', ()=>{
+    dragon2Counter = true
+    eggCheck()
+})
+
+dragon3.addEventListener('click', ()=>{
+    dragon3Counter = true
+    eggCheck()
+})
+
+let dragon1Counter = false
+let dragon2Counter = false
+let dragon3Counter = false
+
+function eggCheck() {
+    if (dragon1Counter && dragon2Counter && dragon3Counter) {
+        egg.classList.add('_active')
+        setTimeout(()=>{
+            egg.classList.remove('_active')
+            dragon1Counter = false
+            dragon2Counter = false
+            dragon3Counter = false
+        }, 7000)
+    }
+}
+

@@ -162,6 +162,7 @@ body {
     background: url("./assets/img/menu.png") no-repeat;
     background-size: contain;
     transition: 1s;
+    overflow: hidden;
 }
 
 .menu._active {
@@ -259,6 +260,7 @@ body {
 }
 
 .menu-sound {
+
     top: -1000px;
 }
 
@@ -439,6 +441,56 @@ body {
     margin: 40px 0 0 0;
 }
 
+
+.wrapper._loading {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.wrapper._loading * {
+    display: none;
+}
+
+.load-icon._loading {
+    display: block !important;
+    background:  url("./assets/img/preload.gif") no-repeat;
+    background-size: cover;
+    width: 450px;
+    height: 450px;
+    filter: invert(92%) sepia(21%) saturate(436%) hue-rotate(2deg) brightness(93%) contrast(106%);
+}
+
+.load-icon {
+    display: none;
+}
+
+.egg__wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.audio__list {
+    position: relative;
+
+}
+
+.egg {
+    position: absolute;
+    background: url("./assets/img/egg.gif") no-repeat;
+    background-size: cover;
+    height: 161px;
+    width: 371px;
+    bottom: -100%;
+    left: -15%;
+    z-index: 999;
+    transition: 1s;
+}
+
+.egg._active {
+    bottom: -18%;
+}
+
 @media (max-width: 955px) {
     .card {
         width: 100px;
@@ -474,6 +526,17 @@ body {
 }
 
 @media (max-width: 650px) {
+
+    .egg {
+        height: 96px;
+        width: 222px;
+        bottom: -100%;
+        left: -12%;
+    }
+
+    .egg._active {
+        bottom: -10%;
+    }
 
     .card {
         width: 80px;
@@ -570,6 +633,16 @@ body {
 }
 
 @media (max-width: 550px) {
+
+    .egg {
+        bottom: -100%;
+        left: -8%;
+    }
+
+    .egg._active {
+        bottom: -10%;
+    }
+
     .card {
         width: 65px;
         height: 65px;
@@ -626,28 +699,4 @@ body {
         height: 95px;
     }
 
-}
-
-
-.wrapper._loading {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.wrapper._loading * {
-    display: none;
-}
-
-.load-icon._loading {
-    display: block !important;
-    background:  url("./assets/img/preload.gif") no-repeat;
-    background-size: cover;
-    width: 450px;
-    height: 450px;
-    filter: invert(92%) sepia(21%) saturate(436%) hue-rotate(2deg) brightness(93%) contrast(106%);
-}
-
-.load-icon {
-    display: none;
 }
