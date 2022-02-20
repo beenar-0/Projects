@@ -229,6 +229,47 @@ function preloadImages() {
 
 preloadImages()
 
+const wrapper = document.querySelector('.wrapper')
+const loadIcon = document.querySelector('.load-icon')
+let haveLoadedBefore = false
+
+if (!localStorage.getItem('haveLoadedBefore')) {
+    setTimeout(()=>{
+        wrapper.classList.remove('_loading')
+        loadIcon.classList.remove('_loading')
+        wrapper.addEventListener('click', () => {
+            if (!isMainSoundPlay) {
+                mainSound.play()
+                isMainSoundPlay = true
+            }
+
+            mainSound.onended = () => {
+                mainSound.play()
+
+            }
+        })
+        haveLoadedBefore = true
+        localStorage.setItem('haveLoadedBefore', haveLoadedBefore)
+    }, 20000)
+} else {
+    setTimeout(()=>{
+        wrapper.classList.remove('_loading')
+        loadIcon.classList.remove('_loading')
+        wrapper.addEventListener('click', () => {
+            if (!isMainSoundPlay) {
+                mainSound.play()
+                isMainSoundPlay = true
+            }
+
+            mainSound.onended = () => {
+                mainSound.play()
+
+            }
+        })
+    }, 2000)
+}
+
+
 
 //  game
 const startBtn = document.querySelector('.new-game-btn')
@@ -254,7 +295,6 @@ yearBtn.addEventListener('click', () => {
 
 
 // main music
-const wrapper = document.querySelector('.wrapper')
 const mainSound = new Audio('./assets/sounds/menu.mp3')
 const soundToggle = document.querySelector('.toggle-sound')
 const soundPlus = document.querySelector('.sound-plus')
@@ -266,17 +306,7 @@ let isMainSoundPlay = false
 
 mainSound.volume = 0.1
 
-wrapper.addEventListener('click', () => {
-    if (!isMainSoundPlay) {
-        mainSound.play()
-        isMainSoundPlay = true
-    }
 
-    mainSound.onended = () => {
-        mainSound.play()
-
-    }
-})
 
 
 // menu-music
