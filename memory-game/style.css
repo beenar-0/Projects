@@ -353,8 +353,9 @@ body {
 
 .duck2 {
     background-image: url("./assets/img/gif2.gif");
-    height: 60px;
-    background-position: center;
+    height: 60px ;
+    width:100px ;
+    margin-left: 15px;
 }
 
 .duck3 {
@@ -552,6 +553,10 @@ body {
         height: 52px;
         background-size: cover;
         margin: 0 4px;
+    }
+
+    .duck2 {
+        height: 45px;
     }
 }
 
