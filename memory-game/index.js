@@ -283,6 +283,7 @@ soundBtn.addEventListener('click', () => {
 
 soundToggle.addEventListener('click', () => {
     mainSound.muted = !mainSound.muted
+    battleSound.muted = !battleSound.muted
     winSound.muted = !winSound.muted
     soundToggleIcon.classList.toggle('muted')
 })
