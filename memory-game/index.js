@@ -22,16 +22,16 @@ scoreBtn.addEventListener('click', () => {
 })
 
 function fillScoreTable(arr) {
-    arr.sort((a, b)=>{
+    arr.sort((a, b) => {
         return b['score'] - a['score']
     })
     if (arr.length > 10) arr.length = 10
-    arr.forEach((item, index)=>{
+    arr.forEach((item, index) => {
         scoreList[index].innerText = `  Points: ${item['score']}  `
         stepsList[index].innerText = `  Steps: ${item['steps']}  `
         timeList[index].innerText = `  Time: ${item['timer']}  `
     })
-    localStorage.setItem('scoreList', JSON.stringify(arr) )
+    localStorage.setItem('scoreList', JSON.stringify(arr))
 }
 
 //localStorage
@@ -55,7 +55,7 @@ function ticker() {
 
 // record results
 
-function recordResult (timer, steps) {
+function recordResult(timer, steps) {
     temp.timer = timer
     temp.score = 100 - steps
     temp.steps = steps
@@ -200,7 +200,7 @@ function resetBoard() {
         time.innerText = '00:00'
         stepsTable.innerText = '00'
         isBattle = false
-        cards.forEach((item)=>{
+        cards.forEach((item) => {
             item.addEventListener('click', flipCard)
         })
     })
@@ -270,8 +270,9 @@ const loadIcon = document.querySelector('.load-icon')
 // }
 
 
-window.addEventListener('load', ()=>{
-            wrapper.classList.remove('_loading')
+window.addEventListener('load', () => {
+    setTimeout(()=>{
+        wrapper.classList.remove('_loading')
         loadIcon.classList.remove('_loading')
         wrapper.addEventListener('click', () => {
             if (!isMainSoundPlay) {
@@ -284,6 +285,8 @@ window.addEventListener('load', ()=>{
 
             }
         })
+    },15000)
+
 })
 
 
@@ -321,8 +324,6 @@ const menuSound = document.querySelector('.menu-sound')
 let isMainSoundPlay = false
 
 mainSound.volume = 0.1
-
-
 
 
 // menu-music
@@ -370,7 +371,6 @@ soundMinus.addEventListener('click', () => {
 })
 
 
-
 // about-menu
 const aboutBtn = document.querySelector('.about-btn')
 const menuAbout = document.querySelector('.menu-about')
@@ -381,7 +381,6 @@ aboutBtn.addEventListener('click', () => {
         menuAbout.classList.toggle('_active')
     }, 300)
 })
-
 
 
 // return to main menu
