@@ -231,11 +231,47 @@ preloadImages()
 
 const wrapper = document.querySelector('.wrapper')
 const loadIcon = document.querySelector('.load-icon')
-let haveLoadedBefore = false
+// let haveLoadedBefore = false
 
-if (!localStorage.getItem('haveLoadedBefore')) {
-    setTimeout(()=>{
-        wrapper.classList.remove('_loading')
+// if (!localStorage.getItem('haveLoadedBefore')) {
+//     setTimeout(()=>{
+//         wrapper.classList.remove('_loading')
+//         loadIcon.classList.remove('_loading')
+//         wrapper.addEventListener('click', () => {
+//             if (!isMainSoundPlay) {
+//                 mainSound.play()
+//                 isMainSoundPlay = true
+//             }
+//
+//             mainSound.onended = () => {
+//                 mainSound.play()
+//
+//             }
+//         })
+//         haveLoadedBefore = true
+//         localStorage.setItem('haveLoadedBefore', haveLoadedBefore)
+//     }, 20000)
+// } else {
+//     setTimeout(()=>{
+//         wrapper.classList.remove('_loading')
+//         loadIcon.classList.remove('_loading')
+//         wrapper.addEventListener('click', () => {
+//             if (!isMainSoundPlay) {
+//                 mainSound.play()
+//                 isMainSoundPlay = true
+//             }
+//
+//             mainSound.onended = () => {
+//                 mainSound.play()
+//
+//             }
+//         })
+//     }, 2000)
+// }
+
+
+window.addEventListener('load', ()=>{
+            wrapper.classList.remove('_loading')
         loadIcon.classList.remove('_loading')
         wrapper.addEventListener('click', () => {
             if (!isMainSoundPlay) {
@@ -248,27 +284,7 @@ if (!localStorage.getItem('haveLoadedBefore')) {
 
             }
         })
-        haveLoadedBefore = true
-        localStorage.setItem('haveLoadedBefore', haveLoadedBefore)
-    }, 20000)
-} else {
-    setTimeout(()=>{
-        wrapper.classList.remove('_loading')
-        loadIcon.classList.remove('_loading')
-        wrapper.addEventListener('click', () => {
-            if (!isMainSoundPlay) {
-                mainSound.play()
-                isMainSoundPlay = true
-            }
-
-            mainSound.onended = () => {
-                mainSound.play()
-
-            }
-        })
-    }, 2000)
-}
-
+})
 
 
 //  game
