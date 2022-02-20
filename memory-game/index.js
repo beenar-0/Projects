@@ -1,7 +1,7 @@
 const menu = document.querySelector('.menu')
 const menuWin = document.querySelector('.menu-win')
 const battleSound = new Audio("./assets/sounds/fight/fight2.mp3")
-const winSound = new Audio('./assets/sounds/win sound.mp3')
+const winSound = new Audio('./assets/sounds/win-sound.mp3')
 winSound.volume = 0.1
 battleSound.volume = 0.1
 let scoreArr = []
