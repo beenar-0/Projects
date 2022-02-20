@@ -35,8 +35,11 @@ function fillScoreTable(arr) {
 }
 
 //localStorage
-scoreArr = JSON.parse(localStorage.getItem('scoreList'))
-if (localStorage.getItem('scoreList')) fillScoreTable(scoreArr)
+
+if (localStorage.getItem('scoreList')) {
+    scoreArr = JSON.parse(localStorage.getItem('scoreList'))
+    fillScoreTable(scoreArr)
+}
 
 // time
 let tick = 0
