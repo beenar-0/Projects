@@ -57,7 +57,6 @@ function ticker() {
 
 
 // record results
-
 function recordResult(timer, steps) {
     temp.timer = timer
     temp.score = 100 - steps
@@ -92,7 +91,6 @@ cards.forEach((item) => {
 })
 
 function flipCard() {
-    console.log('aboba')
     if (lock) return
     this.classList.add('_flip')
     if (!isFlipped) {
@@ -118,9 +116,7 @@ function checkMatch() {
                 mainSound.currentTime = 0
                 menuWin.classList.toggle('_active')
                 cardContainer.classList.toggle('_active')
-                console.log(scoreArr)
                 recordResult(time.innerText, stepsCount)
-                console.log(scoreArr)
                 fillScoreTable(scoreArr)
                 resetBoard()
                 winSound.play()
@@ -224,21 +220,18 @@ const wrapper = document.querySelector('.wrapper')
 const loadIcon = document.querySelector('.load-icon')
 
 
-
 window.addEventListener('load', () => {
-        wrapper.classList.remove('_loading')
-        loadIcon.classList.remove('_loading')
-        wrapper.addEventListener('click', () => {
-            if (!isMainSoundPlay) {
-                mainSound.play()
-                isMainSoundPlay = true
-            }
-
-            mainSound.onended = () => {
-                mainSound.play()
-
-            }
-        })
+    wrapper.classList.remove('_loading')
+    loadIcon.classList.remove('_loading')
+    wrapper.addEventListener('click', () => {
+        if (!isMainSoundPlay) {
+            mainSound.play()
+            isMainSoundPlay = true
+        }
+        mainSound.onended = () => {
+            mainSound.play()
+        }
+    })
 
 })
 
