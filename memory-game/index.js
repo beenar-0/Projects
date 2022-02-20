@@ -221,7 +221,7 @@ buttons.forEach((item) => {
 
 // preload
 function preloadImages() {
-    for (let i = 1; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
         const img = new Image();
         img.src = `./assets/img/gif${i}.gif`;
     }
@@ -255,8 +255,6 @@ yearBtn.addEventListener('click', () => {
 
 // main music
 const wrapper = document.querySelector('.wrapper')
-const duckBtn = document.querySelectorAll('.duck')
-const duckSound = new Audio('./assets/sounds/duck-sound.mp3')
 const mainSound = new Audio('./assets/sounds/menu.mp3')
 const soundToggle = document.querySelector('.toggle-sound')
 const soundPlus = document.querySelector('.sound-plus')
@@ -267,7 +265,6 @@ const menuSound = document.querySelector('.menu-sound')
 let isMainSoundPlay = false
 
 mainSound.volume = 0.1
-duckSound.volume = 0.1
 
 wrapper.addEventListener('click', () => {
     if (!isMainSoundPlay) {
@@ -326,12 +323,6 @@ soundMinus.addEventListener('click', () => {
     if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
 
-
-duckBtn.forEach((item) => {
-    item.addEventListener('click', () => {
-        duckSound.play()
-    })
-})
 
 
 // about-menu
