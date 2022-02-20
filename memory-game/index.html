@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>Memory game</title>
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="null.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container"></div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <div class="cards__container">
+                <div class="score-table">
+                    <span class="time-title">Time: <span class="time">00:00</span></span>
+                    <span class="steps-title">Steps: <span class="steps">00</span></span>
+                </div>
+                <div class="cards__wrapper">
+                    <div class="card" data-card="arrow">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/arrow.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="arrow">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/arrow.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="books">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/books.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="books">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/books.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="earth">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/earth.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="earth">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/earth.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="fire">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/fire.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="fire">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/fire.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="gold">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/gold.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="gold">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/gold.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="kyrluk">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/kyrluk.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="kyrluk">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/kyrluk.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="magic">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/magic.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="magic">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/magic.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="scroll">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/scroll.png " class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="scroll">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/scroll.png " class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="ship">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/ship.png" class="card-front" alt="card">
+                    </div>
+                    <div class="card" data-card="ship">
+                        <img src="./assets/img/cards/cover.jpg" class="card-back" alt="card">
+                        <img src="./assets/img/cards/ship.png" class="card-front" alt="card">
+                    </div>
+                </div>
+                <div class="menu-item back-btn">Back to menu</div>
+            </div>
+            <div class="menu main-menu">
+                <ul class="menu__list">
+                    <li class="menu-item new-game-btn">New game</li>
+                    <li class="menu-item score-btn">High scores</li>
+                    <li class="menu-item sound-btn">Music</li>
+                    <li class="menu-item about-btn">About</li>
+                </ul>
+            </div>
+            <div class="menu menu-about">
+                <ul class="menu__list">
+                    <li class="menu-item"><a href="https://github.com/beenar-0" target="_blank">GitHub</a></li>
+                    <li class="menu-item"><a href="https://rs.school/js-stage0/" target="_blank">Rolling scopes
+                        school</a></li>
+                    <li class="menu-item year-btn">
+                        <div class="troglodyte"></div>
+                        2022
+                    </li>
+                    <li class="menu-item back-btn">Back to menu</li>
+                </ul>
+            </div>
+            <div class="menu menu-score">
+                <ul class="menu__list score__list">
+                     <li class="score-item">1: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">2: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">3: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">4: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">5: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">6: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">7: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">8: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                     <li class="score-item">9: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                    <li class="score-item">10: <span class="score-amount"></span><span class="steps-amount"></span><span class="time-amount"></span></li>
+                </ul>
+                <div class="menu-item back-btn">Back to menu</div>
+            </div>
+            <div class="menu menu-sound">
+                <ul class="menu__list audio__list">
+                    <li class="menu-item toggle-sound">Music: <span class="toggle-sound-icon"></span></li>
+                    <li class="menu-item volume-btn sound-minus"><span class="sound-minus-icon"></span></li>
+                    <li class="menu-item volume-btn sound-plus"><span class="sound-plus-icon"></span></li>
+                    <li class="duck"><span class="duck1 animated-duck"></span></li>
+                    <li class="duck"><span class="duck2 animated-duck"></span></li>
+                    <li class="duck"><span class="duck3 animated-duck"></span></li>
+                    <li class="menu-item back-btn">Back to menu</li>
+                </ul>
+            </div>
+            <div class="menu menu-win">
+                <div class="win-gif__container">
+                    <div class="win-gif"></div>
+                </div>
+                <div class="win-text__container">
+                    <span class="win-text">A glorious victory!</span>
+                    <span class="win-text">For valor in combat, you receive <span
+                            class="score-count">0</span> points</span>
+                </div>
+                <div class="menu-item back-btn win-btn">Back to menu</div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container"></div>
+    </footer>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

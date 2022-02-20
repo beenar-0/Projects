@@ -1,0 +1,613 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    min-width: 875px;
+    width: 100%;
+    min-height: 100%;
+    background: url("./assets/img/main.jpg") no-repeat fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    min-height: 800px;
+    height: 1px;
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.footer {
+    width: 100%;
+}
+
+.main__container {
+    min-height: 700px;
+    height: 100%;
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.score-table {
+    padding: 0 20px;
+    font-size: 35px;
+    color: #f1e9af;
+    line-height: 35px;
+    text-align: center;
+    width: 484px;
+    height: 110px;
+    background: url("./assets/img/small plate2.png") no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+    transform: scale(1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 5px 5px 5px black;
+}
+
+.score-table:active {
+    transform: scale(0.97);
+}
+
+.cards__container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1000px;
+    height: max-content;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+    display: flex;
+    position: absolute;
+    top: -1000px;
+}
+
+.cards__container._active {
+    top: 0;
+}
+
+.cards__wrapper {
+    margin: 30px auto;
+    max-width: 1000px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    transition: 1s;
+    display: flex;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+    height: 125px;
+    width: 125px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+}
+
+.card-back,
+.card-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    border-radius: 2px;
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    transform: rotateY(0);
+}
+
+.card._flip {
+    transform: rotateY(180deg);
+}
+
+.card:active {
+    transition: 0.3s;
+    transform: scale(0.97);
+}
+
+.menu {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+    position: absolute;
+    top: 0;
+    width: 600px;
+    height: 600px;
+    background: url("./assets/img/menu.png") no-repeat;
+    background-size: contain;
+    transition: 1s;
+}
+
+.menu._active {
+    top: 1000px;
+}
+
+
+.menu-item {
+    box-shadow: 5px 5px 5px #000;
+    cursor: pointer;
+    margin: 30px;
+    width: 400px;
+    height: 72px;
+    background: url("./assets/img/menu-item2.png") no-repeat;
+    background-size: 100% 100%;
+    transform: scale(1);
+    transition: 0.1s;
+    font-size: 40px;
+    color: #f1e9af;
+    line-height: 72px;
+    text-align: center;
+}
+
+.menu-item:active {
+    transform: scale(0.95);
+}
+
+.menu-about {
+    top: -1000px;
+}
+
+.menu-about._active {
+    top: 0;
+}
+
+.menu-item a {
+    font-size: 40px;
+    color: #f1e9af;
+    line-height: 72px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.score__list {
+    margin-right: 20px;
+}
+
+.menu-score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: -1000px;
+}
+
+.menu-score._active {
+    top: 0;
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-item,
+.score-amount,
+.time-amount,
+.steps-amount {
+
+    margin-left: 8px;
+    text-align: left;
+    font-size: 20px;
+    color: #f1e9af;
+    line-height: 35px;
+}
+
+.score-amount,
+.steps-amount {
+    width: 81px;
+}
+
+.time-amount{
+    width: 100px;
+}
+
+.score__list li:last-child {
+    margin-left: 0;
+}
+
+.score__list {
+    width: 100%;
+
+}
+
+.menu-sound {
+    top: -1000px;
+}
+
+.menu-sound._active {
+    top: 0;
+}
+
+.volume-btn {
+    background: url("./assets/img/menu-semi-item.png") no-repeat;
+    width: 160px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px 0 30px 30px;
+}
+
+.toggle-sound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-sound-icon {
+    transition: 0.3s;
+    margin: 4px 0 0 10px;
+    display: inline-block;
+    background-image: url("./assets/svg/soundON.png");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    filter: invert(99%) sepia(100%) saturate(699%) hue-rotate(318deg) brightness(107%) contrast(89%);
+}
+
+.toggle-sound-icon.muted {
+    background-image: url("./assets/svg/soundOFF.png");
+}
+
+.sound-plus-icon {
+    display: block;
+    box-shadow: none;
+    height: 40px;
+    width: 40px;
+    background: url("./assets/svg/soundPlus.png") no-repeat;
+    background-size: contain;
+    filter: invert(99%) sepia(100%) saturate(699%) hue-rotate(318deg) brightness(107%) contrast(89%);
+}
+
+.sound-minus-icon {
+    display: block;
+    box-shadow: none;
+    height: 40px;
+    width: 40px;
+    background: url("./assets/svg/soundMinus.png") no-repeat;
+    background-size: contain;
+    filter: invert(99%) sepia(100%) saturate(699%) hue-rotate(318deg) brightness(107%) contrast(89%);
+}
+
+.audio__list li:nth-child(2) {
+    margin-right: 46px;
+}
+
+.duck {
+    margin: 0 7px;
+    display: inline-block;
+    height: 72px;
+    width: 121px;
+    background-image: url("./assets/img/menu-semi-item-duck.png");
+    transition: 0.2s;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.duck:active {
+    transform: scale(0.90);
+}
+
+.music__list li:nth-child(4) {
+    margin-left: 30px;
+}
+
+.audio__list li:first-child {
+    margin-bottom: 0;
+}
+
+.audio__list li:nth-child(4) {
+    margin-left: 31px;
+}
+
+.animated-duck {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.duck1 {
+    background-image: url("./assets/img/gif1.gif");
+}
+
+.duck2 {
+    background-image: url("./assets/img/gif2.gif");
+}
+
+.duck3 {
+    background-image: url("./assets/img/gif3.gif");
+}
+
+* {
+    cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo29.cur), auto !important;
+}
+
+* {
+    cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;
+}
+
+.year-btn {
+    overflow: hidden;
+}
+
+.troglodyte {
+    position: absolute;
+    background: url("./assets/img/gif0.gif") no-repeat;
+    background-size: contain;
+    width: 98px;
+    height: 64px;
+    transform: translateX(-100%);
+    transition: 1s;
+}
+
+.troglodyte._active {
+    transform: translateX(0);
+}
+
+.menu-win {
+    top: -1000px;
+}
+
+.menu-win._active {
+    top: 0;
+}
+
+.win-text__container {
+    background: url("./assets/img/test.png");
+    background-size: cover;
+    width: 450px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f1e9af;
+    border-radius: 3px;
+}
+
+.win-gif {
+    background: url("./assets/img/gif4.gif");
+    width: 420px;
+    height: 200px;
+    background-size: cover;
+    border: 1px solid #f1e9af;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.win-text {
+    display: block;
+    margin: 10px 0;
+    color: #f1e9af;
+    font-size: 20px;
+}
+
+.win-btn {
+    margin: 40px 0 0 0;
+}
+
+@media (max-width: 955px) {
+    .card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cards__wrapper,
+    .cards__container {
+        max-width: 880px;
+    }
+}
+
+
+@media (max-width: 885px) {
+    .cards__wrapper {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .cards__container {
+        max-width: 800px;
+
+    }
+
+    .main__container {
+        min-width: 550px;
+    }
+
+    .wrapper {
+        min-width: 550px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cards__wrapper {
+        max-width: 550px;
+    }
+
+    .cards__container {
+        margin: 50px;
+    }
+
+    .score-table {
+        font-size: 25px;
+        width: 338px;
+        height: 77px;
+    }
+
+    .menu-item,
+    .menu-item a {
+        width: 280px;
+        height: 50px;
+        font-size: 25px;
+        line-height: 50px;
+
+    }
+
+    .menu {
+        margin: 50px;
+        width: 450px;
+        height: 450px;
+        padding: 50px;
+    }
+
+    .score-item,
+    .score-amount,
+    .time-amount,
+    .steps-amount {
+        font-size: 16px;
+        height: 27px;
+    }
+
+    .win-gif {
+        width: 336px;
+        height: 160px;
+    }
+
+    .win-text__container {
+        width: 350px;
+    }
+
+    .win-text {
+        font-size: 15px;
+    }
+
+    .win-btn {
+        margin-top: 15px;
+    }
+
+    .troglodyte {
+        height: 45px;
+        width: 70px;
+    }
+
+    .volume-btn {
+        background-size: cover;
+        width: 110px;
+        height: 48px;
+    }
+
+    .audio__list li:nth-child(2) {
+        margin-right: 27px;
+    }
+
+    .sound-minus-icon,
+    .sound-plus-icon,
+    .toggle-sound-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .duck {
+        width: 86px;
+        height: 52px;
+        background-size: cover;
+        margin: 0 4px;
+    }
+}
+
+@media (max-width: 550px) {
+    .card {
+        width: 65px;
+        height: 65px;
+    }
+
+    .cards__wrapper {
+        max-width: 450px;
+        gap: 15px;
+        margin: 5px 0;
+    }
+
+    .cards__container {
+        max-width: 450px;
+        margin: 10px;
+    }
+
+    .menu {
+        margin: 20px;
+    }
+
+    .menu-item {
+        margin: 25px;
+    }
+
+    .wrapper {
+        min-width: 450px;
+    }
+
+    .main {
+        max-width: 450px;
+    }
+
+    .main__container {
+        min-width: 450px;
+    }
+
+    .menu {
+        width: 400px;
+        height: 400px;
+        padding: 30px;
+    }
+
+    .menu-score div:last-child {
+        margin: 15px;
+    }
+
+    .win-gif {
+        margin-top: 10px;
+        height: 128px;
+        width: 268px;
+    }
+
+    .win-text__container {
+        height: 95px;
+    }
+
+}
