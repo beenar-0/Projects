@@ -4,7 +4,39 @@ const battleSound = new Audio("./assets/sounds/fight/fight2.mp3")
 const winSound = new Audio('./assets/sounds/win sound.mp3')
 winSound.volume = 0.1
 battleSound.volume = 0.1
-const scoreArr = new Array(10)
+let scoreArr = []
+let temp = {}
+
+// score-menu
+const scoreBtn = document.querySelector('.score-btn')
+const menuScore = document.querySelector('.menu-score')
+const scoreList = document.querySelectorAll('.score-amount')
+const stepsList = document.querySelectorAll('.steps-amount')
+const timeList = document.querySelectorAll('.time-amount')
+
+scoreBtn.addEventListener('click', () => {
+    setTimeout(() => {
+        menu.classList.toggle('_active')
+        menuScore.classList.toggle('_active')
+    }, 300)
+})
+
+function fillScoreTable(arr) {
+    arr.sort((a, b)=>{
+        return b['score'] - a['score']
+    })
+    if (arr.length > 10) arr.length = 10
+    arr.forEach((item, index)=>{
+        scoreList[index].innerText = `  Points: ${item['score']}  `
+        stepsList[index].innerText = `  Steps: ${item['steps']}  `
+        timeList[index].innerText = `  Time: ${item['timer']}  `
+    })
+    localStorage.setItem('scoreList', JSON.stringify(arr) )
+}
+
+//localStorage
+scoreArr = JSON.parse(localStorage.getItem('scoreList'))
+if (localStorage.getItem('scoreList')) fillScoreTable(scoreArr)
 
 // time
 let tick = 0
@@ -21,8 +53,18 @@ function ticker() {
 }
 
 
+// record results
 
-// placeholder to win 
+function recordResult (timer, steps) {
+    temp.timer = timer
+    temp.score = 100 - steps
+    temp.steps = steps
+    scoreArr.push(temp)
+    temp = {}
+}
+
+
+// placeholder to win
 const scoreTable = document.querySelector('.score-table')
 scoreTable.addEventListener('click', () => {
     mainSound.pause()
@@ -59,6 +101,7 @@ cards.forEach((item) => {
 })
 
 function flipCard() {
+    console.log('aboba')
     if (lock) return
     this.classList.add('_flip')
     if (!isFlipped) {
@@ -84,9 +127,12 @@ function checkMatch() {
                 mainSound.currentTime = 0
                 menuWin.classList.toggle('_active')
                 cardContainer.classList.toggle('_active')
+                console.log(scoreArr)
+                recordResult(time.innerText, stepsCount)
+                console.log(scoreArr)
+                fillScoreTable(scoreArr)
                 resetBoard()
                 winSound.play()
-                let temp = {}
             }, 1000)
         }
         disable()
@@ -149,10 +195,14 @@ function resetBoard() {
         tick = 0
         minutes = 0
         seconds = 0
+        gameEnd = 0
         clearInterval(timer)
         time.innerText = '00:00'
         stepsTable.innerText = '00'
         isBattle = false
+        cards.forEach((item)=>{
+            item.addEventListener('click', flipCard)
+        })
     })
 }
 
@@ -227,6 +277,7 @@ wrapper.addEventListener('click', () => {
 
     mainSound.onended = () => {
         mainSound.play()
+
     }
 })
 
@@ -294,20 +345,6 @@ aboutBtn.addEventListener('click', () => {
     }, 300)
 })
 
-
-// score-menu
-const scoreBtn = document.querySelector('.score-btn')
-const menuScore = document.querySelector('.menu-score')
-const scoreList = document.querySelectorAll('.score-amount')
-const stepsList = document.querySelectorAll('.steps-amount')
-const timeList = document.querySelectorAll('.time-amount')
-
-scoreBtn.addEventListener('click', () => {
-    setTimeout(() => {
-        menu.classList.toggle('_active')
-        menuScore.classList.toggle('_active')
-    }, 300)
-})
 
 
 // return to main menu
