@@ -615,6 +615,25 @@ body {
 }
 
 
-/*.wrapper * {*/
-/*    display: none;*/
-/*}*/
+.wrapper._loading {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.wrapper._loading * {
+    display: none;
+}
+
+.load-icon._loading {
+    display: block !important;
+    background:  url("./assets/img/preload.gif") no-repeat;
+    background-size: cover;
+    width: 450px;
+    height: 450px;
+    filter: invert(92%) sepia(21%) saturate(436%) hue-rotate(2deg) brightness(93%) contrast(106%);
+}
+
+.load-icon {
+    display: none;
+}
