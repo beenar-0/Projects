@@ -7,21 +7,22 @@ battleSound.volume = 0.1
 const scoreArr = new Array(10)
 
 // time
-let timer = 0
+let tick = 0
 let minutes = 0
 let seconds = 0
+let timer
 const time = document.querySelector('.time')
-const timerFunc = function() {
-    setInterval(() => {
-        timer += 1
-        seconds = timer % 60
-        minutes = Math.trunc(timer / 60)
-        time.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-    }, 1000)
+
+function ticker() {
+    tick += 1
+    seconds = tick % 60
+    minutes = Math.trunc(tick / 60)
+    time.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 }
 
 
-// aboba
+
+// placeholder to win 
 const scoreTable = document.querySelector('.score-table')
 scoreTable.addEventListener('click', () => {
     mainSound.pause()
@@ -50,7 +51,7 @@ cards.forEach((item) => {
             mainSound.pause()
             mainSound.currentTime = 0
             battleSound.play()
-            timerFunc()
+            timer = setInterval(ticker, 1000)
         }
         isBattle = true
 
@@ -85,7 +86,6 @@ function checkMatch() {
                 cardContainer.classList.toggle('_active')
                 resetBoard()
                 winSound.play()
-                clearInterval(timerFunc)
                 let temp = {}
             }, 1000)
         }
@@ -146,9 +146,11 @@ function resetBoard() {
     cards.forEach((item) => {
         item.classList.remove('_flip')
         shuffleCards()
-        timer = 0
+        tick = 0
         minutes = 0
         seconds = 0
+        clearInterval(timer)
+        time.innerText = '00:00'
         stepsTable.innerText = '00'
         isBattle = false
     })
@@ -323,7 +325,6 @@ backBtn.forEach((item) => {
             menuWin.classList.remove('_active')
             battleSound.pause()
             battleSound.currentTime = 0
-            clearInterval(timerFunc)
         }, 500)
         setTimeout(() => {
             mainSound.play()
