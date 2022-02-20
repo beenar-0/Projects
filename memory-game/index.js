@@ -1,11 +1,39 @@
 const menu = document.querySelector('.menu')
 const menuWin = document.querySelector('.menu-win')
-const battleSound = new Audio("./assets/sounds/fights")
+const battleSound = new Audio("./assets/sounds/fight/fight2.mp3")
 const winSound = new Audio('./assets/sounds/win sound.mp3')
 winSound.volume = 0.1
+battleSound.volume = 0.1
+const scoreArr = new Array(10)
 
+// time
+let timer = 0
+let minutes = 0
+let seconds = 0
+const time = document.querySelector('.time')
+const timerFunc = function() {
+    setInterval(() => {
+        timer += 1
+        seconds = timer % 60
+        minutes = Math.trunc(timer / 60)
+        time.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+    }, 1000)
+}
+
+
+// aboba
+const scoreTable = document.querySelector('.score-table')
+scoreTable.addEventListener('click', () => {
+    mainSound.pause()
+    mainSound.currentTime = 0
+    menuWin.classList.toggle('_active')
+    cardContainer.classList.toggle('_active')
+    resetBoard()
+    winSound.play()
+})
 
 // game logic
+const score = document.querySelector('.score-count')
 const cards = document.querySelectorAll('.card')
 const stepsTable = document.querySelector('.steps')
 let gameEnd = 0
@@ -13,9 +41,20 @@ let stepsCount = 0
 let isFlipped = false
 let firstCard, secondCard
 let lock = false
+let isBattle = false
 
 cards.forEach((item) => {
     item.addEventListener('click', flipCard)
+    item.addEventListener('click', () => {
+        if (!isBattle) {
+            mainSound.pause()
+            mainSound.currentTime = 0
+            battleSound.play()
+            timerFunc()
+        }
+        isBattle = true
+
+    })
 })
 
 function flipCard() {
@@ -30,6 +69,7 @@ function flipCard() {
         isFlipped = false
         stepsCount += 1
         stepsTable.innerText = stepsCount.toString().padStart(2, '0')
+        score.innerText = `${100 - stepsCount}`
         checkMatch()
     }
 }
@@ -43,7 +83,10 @@ function checkMatch() {
                 mainSound.currentTime = 0
                 menuWin.classList.toggle('_active')
                 cardContainer.classList.toggle('_active')
+                resetBoard()
                 winSound.play()
+                clearInterval(timerFunc)
+                let temp = {}
             }, 1000)
         }
         disable()
@@ -96,6 +139,21 @@ function random() {
     return Math.ceil(Math.random() * 18)
 }
 
+// reset board
+function resetBoard() {
+    battleSound.pause()
+    battleSound.currentTime = 0
+    cards.forEach((item) => {
+        item.classList.remove('_flip')
+        shuffleCards()
+        timer = 0
+        minutes = 0
+        seconds = 0
+        stepsTable.innerText = '00'
+        isBattle = false
+    })
+}
+
 
 // buttons sound
 const buttons = document.querySelectorAll('.menu-item')
@@ -126,6 +184,7 @@ const cardContainer = document.querySelector('.cards__container')
 
 startBtn.addEventListener('click', () => {
     setTimeout(() => {
+        stepsCount = 0
         menu.classList.add('_active')
         cardContainer.classList.add('_active')
     }, 300)
@@ -190,11 +249,13 @@ soundPlus.addEventListener('click', () => {
     if ((mainSound.volume + 0.1) < 1) {
         mainSound.volume = mainSound.volume + 0.1
         winSound.volume = winSound.volume + 0.1
+        battleSound.volume = battleSound.volume + 0.1
     }
     if (mainSound.volume > 0) {
         soundToggleIcon.classList.remove('muted')
         mainSound.muted = false
         winSound.muted = false
+        battleSound.muted = false
     }
 })
 
@@ -202,10 +263,12 @@ soundMinus.addEventListener('click', () => {
     if ((mainSound.volume - 0.1) <= 0) {
         mainSound.volume = 0
         winSound.volume = 0
+        battleSound.volume = 0
         soundToggleIcon.classList.add('muted')
     } else {
         mainSound.volume = mainSound.volume - 0.1
         winSound.volume = winSound.volume - 0.1
+        battleSound.volume = battleSound.volume - 0.1
     }
     if (mainSound.volume < 0.01) soundToggleIcon.classList.add('muted')
 })
@@ -233,6 +296,9 @@ aboutBtn.addEventListener('click', () => {
 // score-menu
 const scoreBtn = document.querySelector('.score-btn')
 const menuScore = document.querySelector('.menu-score')
+const scoreList = document.querySelectorAll('.score-amount')
+const stepsList = document.querySelectorAll('.steps-amount')
+const timeList = document.querySelectorAll('.time-amount')
 
 scoreBtn.addEventListener('click', () => {
     setTimeout(() => {
@@ -255,7 +321,15 @@ backBtn.forEach((item) => {
             cardContainer.classList.remove('_active')
             menuSound.classList.remove('_active')
             menuWin.classList.remove('_active')
-        }, 300)
+            battleSound.pause()
+            battleSound.currentTime = 0
+            clearInterval(timerFunc)
+        }, 500)
+        setTimeout(() => {
+            mainSound.play()
+        }, 2000)
+        setTimeout(resetBoard, 2000)
+
     })
 })
 
